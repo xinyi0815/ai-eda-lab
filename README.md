@@ -3,8 +3,11 @@
 Website for the **AI-EDA Lab**, National Yang Ming Chiao Tung University
 (advisor: Prof. Mark Po-Hung Lin / 林柏宏).
 
+**Live at <https://xinyi0815.github.io/ai-eda-lab/>**
+
 **Status: draft.** This is a review copy shown to Prof. Lin for feedback on design
-and content. It is not the finished site.
+and content. It is not the finished site. Search engines are blocked — see
+[Before this goes live](#before-this-goes-live).
 
 ---
 
@@ -106,6 +109,20 @@ Currently served from this personal account for review. The intended home is the
 *Settings → General → Danger Zone → Transfer ownership* — this keeps the commit
 history. A `*.nycu.edu.tw` subdomain can later be pointed at GitHub Pages with a
 `CNAME` file plus one DNS record; nothing about the site needs to change.
+
+## Committing
+
+This repository is set to commit under a GitHub noreply address so no personal
+mailbox ends up in the public history:
+
+```sh
+git config --local user.name  "xinyi0815"
+git config --local user.email "137688174+xinyi0815@users.noreply.github.com"
+```
+
+`--local` keeps this to this repository. If the repo is later transferred to the
+lab account, set the local identity to that account's own noreply address before
+committing again.
 
 ## Local preview
 
