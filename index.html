@@ -1,0 +1,649 @@
+<title>AI-EDA Lab</title>
+<!-- DRAFT: remove the next line before the site goes live. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+/* ─── tokens ───────────────────────────────────────────────── */
+:root{
+  --bg:#FFFFFF;
+  --bg-2:#F7F8F9;
+  --ink:#191C20;
+  --ink-2:#565D67;
+  --ink-3:#8A929C;
+  --rule:#E7E9EC;
+  --rule-2:#F0F2F4;
+  --acc:#1E5A96;
+  --acc-bg:#EDF3F8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151A; --bg-2:#171B21;
+    --ink:#E8EAED; --ink-2:#A5ADB8; --ink-3:#767E89;
+    --rule:#262B33; --rule-2:#1D222A;
+    --acc:#84B4E4; --acc-bg:#182430;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12151A; --bg-2:#171B21;
+  --ink:#E8EAED; --ink-2:#A5ADB8; --ink-3:#767E89;
+  --rule:#262B33; --rule-2:#1D222A;
+  --acc:#84B4E4; --acc-bg:#182430;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Source Sans 3",-apple-system,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+  font-size:16.5px; line-height:1.75; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+h1,h2,h3,h4{margin:0; font-weight:600; text-wrap:balance}
+.serif{font-family:"Source Serif 4",Georgia,"Songti TC","PingFang TC",serif}
+a{color:var(--acc); text-decoration:none; transition:opacity .15s ease}
+a:hover{opacity:.7}
+p{margin:0 0 1.05em}
+:focus-visible{outline:2px solid var(--acc); outline-offset:3px; border-radius:2px}
+
+html[data-lang="en"] .l-zh{display:none}
+html[data-lang="zh"] .l-en{display:none}
+
+/* ─── draft strip ──────────────────────────────────────────── */
+.draft{
+  background:var(--bg-2); color:var(--ink-3); font-size:13.5px;
+  padding:9px 32px; text-align:center; border-bottom:1px solid var(--rule);
+}
+.draft b{color:var(--ink-2); font-weight:600}
+
+/* ─── header ───────────────────────────────────────────────── */
+header{
+  position:sticky; top:0; z-index:20; background:var(--bg);
+  border-bottom:1px solid var(--rule);
+}
+.bar{
+  max-width:1100px; margin:0 auto; padding:0 32px;
+  display:flex; align-items:center; gap:38px; height:66px;
+}
+.wordmark{font-size:19.5px; font-weight:600; letter-spacing:-0.015em; white-space:nowrap; color:var(--ink)}
+.wordmark span{color:var(--acc)}
+
+nav{display:flex; gap:26px; flex:1; overflow-x:auto; scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{
+  all:unset; cursor:pointer; white-space:nowrap; font-size:15px; color:var(--ink-2);
+  padding:4px 0; border-bottom:1.5px solid transparent; transition:color .18s ease, border-color .18s ease;
+}
+nav button:hover{color:var(--ink)}
+nav button[aria-current="true"]{color:var(--ink); border-bottom-color:var(--acc); font-weight:600}
+nav button:focus-visible{outline-offset:4px}
+
+.lang{display:flex; gap:3px; flex:none}
+.lang button{
+  all:unset; cursor:pointer; font-size:13.5px; color:var(--ink-3);
+  padding:4px 9px; border-radius:4px; transition:background .18s ease, color .18s ease;
+}
+.lang button:hover{color:var(--ink-2); background:var(--bg-2)}
+.lang button[aria-pressed="true"]{color:var(--ink); background:var(--bg-2); font-weight:600}
+
+/* ─── layout ───────────────────────────────────────────────── */
+main{max-width:1100px; margin:0 auto; padding:0 32px 140px}
+.view{display:none}
+.view.on{display:block; animation:in .32s cubic-bezier(.2,.7,.3,1)}
+@keyframes in{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .view.on{animation:none}
+}
+
+.title{padding:78px 0 0; max-width:22ch}
+.title h2{font-size:clamp(36px,4.6vw,52px); line-height:1.14; letter-spacing:-0.02em}
+.lede{margin:22px 0 0; max-width:60ch; font-size:19px; line-height:1.65; color:var(--ink-2)}
+.title + .lede{margin-top:24px}
+
+section{margin-top:84px}
+section > h3{
+  font-size:14px; font-weight:600; color:var(--ink-3);
+  letter-spacing:.09em; text-transform:uppercase; margin-bottom:26px;
+}
+section > h3 .ct{font-weight:400; color:var(--ink-3); letter-spacing:0; text-transform:none}
+.prose{max-width:68ch; color:var(--ink-2)}
+.prose strong{color:var(--ink); font-weight:600}
+.prose p:last-child{margin-bottom:0}
+
+/* ─── numbers ──────────────────────────────────────────────── */
+.figures{display:flex; flex-wrap:wrap; gap:64px}
+.fig .n{font-size:52px; line-height:1; font-weight:400; letter-spacing:-0.03em; color:var(--ink)}
+.fig .l{margin-top:12px; font-size:14.5px; color:var(--ink-3); line-height:1.5; max-width:17ch}
+
+/* ─── entries (research, highlight) ────────────────────────── */
+.entries{display:flex; flex-direction:column; gap:52px; max-width:74ch}
+.entry h4{font-size:22px; line-height:1.3; letter-spacing:-0.01em; margin-bottom:10px}
+.entry p{margin:0; color:var(--ink-2); max-width:68ch}
+.entry .kicker{
+  font-size:13px; color:var(--acc); letter-spacing:.06em; text-transform:uppercase;
+  font-weight:600; margin-bottom:9px;
+}
+
+/* ─── publications ─────────────────────────────────────────── */
+.pubset{margin-top:84px}
+.pub{padding:20px 0; border-top:1px solid var(--rule-2); max-width:82ch}
+.pub:first-of-type{border-top:1px solid var(--rule)}
+.pub .t{font-size:17px; line-height:1.5; margin:0 0 6px; color:var(--ink); font-weight:400}
+.pub .t a{color:var(--ink)}
+.pub .t a:hover{color:var(--acc); opacity:1}
+.pub .a{font-size:14.5px; line-height:1.6; color:var(--ink-3); margin:0}
+.pub .a b{color:var(--ink-2); font-weight:600}
+.pub .m{font-size:14.5px; color:var(--ink-3); margin:5px 0 0}
+.pub .m .v{color:var(--ink-2); font-weight:600}
+.pub .m .v.hi{color:var(--acc)}
+
+ol.cites{margin:0; padding:0; list-style:none; max-width:82ch}
+ol.cites li{padding:18px 0; border-top:1px solid var(--rule-2); color:var(--ink-2); font-size:15.5px; line-height:1.65}
+ol.cites li:first-child{border-top:1px solid var(--rule)}
+ol.cites li b{color:var(--ink); font-weight:600}
+ol.cites li i{color:var(--ink-2)}
+
+/* ─── awards ───────────────────────────────────────────────── */
+.awards{max-width:78ch}
+.award{display:grid; grid-template-columns:76px minmax(0,1fr); gap:20px;
+  padding:16px 0; border-top:1px solid var(--rule-2)}
+.award:first-child{border-top:1px solid var(--rule)}
+.award .y{color:var(--ink-3); font-size:15px}
+.award .d{color:var(--ink-2); font-size:15.5px; line-height:1.6}
+
+/* ─── people ───────────────────────────────────────────────── */
+.pi{display:grid; grid-template-columns:148px minmax(0,1fr); gap:40px; align-items:start; max-width:80ch}
+.pi .ph{aspect-ratio:4/5; background:var(--bg-2); border-radius:3px;
+  display:grid; place-items:center; color:var(--ink-3); font-size:13px; text-align:center; padding:12px}
+.pi h4{font-size:26px; letter-spacing:-0.015em; margin-bottom:6px}
+.pi .role{font-size:15.5px; color:var(--ink-3); line-height:1.6; margin-bottom:18px}
+.pi .prose{font-size:16px}
+
+.roster{display:grid; grid-template-columns:repeat(auto-fill,minmax(168px,1fr)); gap:30px 28px; max-width:80ch}
+.slot .ph2{aspect-ratio:4/5; background:var(--bg-2); border-radius:3px; margin-bottom:12px}
+.slot .nm{color:var(--ink-3); font-size:15px}
+
+/* ─── faq ──────────────────────────────────────────────────── */
+.faq{max-width:74ch}
+details{border-top:1px solid var(--rule-2)}
+details:first-of-type{border-top:1px solid var(--rule)}
+details summary{
+  cursor:pointer; padding:20px 40px 20px 0; position:relative; list-style:none;
+  font-size:17.5px; color:var(--ink); transition:color .18s ease;
+}
+details summary::-webkit-details-marker{display:none}
+details summary:hover{color:var(--acc)}
+details summary::after{
+  content:""; position:absolute; right:8px; top:29px; width:9px; height:9px;
+  border-right:1.5px solid var(--ink-3); border-bottom:1.5px solid var(--ink-3);
+  transform:rotate(45deg); transition:transform .22s ease;
+}
+details[open] summary::after{transform:rotate(-135deg); top:33px}
+details .ans{padding:0 0 24px; color:var(--ink-2); max-width:68ch}
+
+/* ─── contact ──────────────────────────────────────────────── */
+.kv{max-width:60ch}
+.kv .row{display:grid; grid-template-columns:112px minmax(0,1fr); gap:24px;
+  padding:15px 0; border-top:1px solid var(--rule-2)}
+.kv .row:first-child{border-top:1px solid var(--rule)}
+.kv dt{color:var(--ink-3); font-size:15px; margin:0}
+.kv dd{margin:0; color:var(--ink-2); font-size:16px; line-height:1.6}
+
+/* ─── notes ────────────────────────────────────────────────── */
+.note{
+  background:var(--bg-2); border-radius:4px; padding:18px 22px;
+  font-size:15px; color:var(--ink-2); max-width:70ch; line-height:1.65;
+}
+.note b{display:block; color:var(--ink-3); font-size:12.5px; letter-spacing:.08em;
+  text-transform:uppercase; margin-bottom:5px; font-weight:600}
+section > .note{margin-bottom:36px}
+.note:last-child{margin-bottom:0}
+
+.out{font-size:15px}
+.out::after{content:" \2197"; font-size:.85em}
+
+/* ─── mobile ───────────────────────────────────────────────── */
+@media (max-width:760px){
+  body{font-size:16px}
+  .bar{padding:0 20px; gap:20px; height:60px}
+  .wordmark{font-size:17.5px}
+  nav{gap:18px}
+  nav button{font-size:14.5px}
+  main{padding:0 20px 100px}
+  .draft{padding:9px 20px; text-align:left}
+  .title{padding-top:48px; max-width:none}
+  section{margin-top:60px}
+  .pubset{margin-top:60px}
+  .figures{gap:34px 44px}
+  .fig .n{font-size:42px}
+  .pi{grid-template-columns:1fr; gap:24px}
+  .pi .ph{max-width:170px}
+  .roster{grid-template-columns:repeat(auto-fill,minmax(132px,1fr)); gap:24px 20px}
+  .award{grid-template-columns:64px minmax(0,1fr); gap:14px}
+  .kv .row{grid-template-columns:1fr; gap:2px}
+}
+</style>
+
+<div class="draft">
+  <span class="l-en"><b>Draft for review.</b> Publications, awards, patents and contact details are real. Member roster and research descriptions are placeholders awaiting confirmation.</span>
+  <span class="l-zh"><b>審閱用草稿。</b>論文、獲獎、專利與聯絡資訊為真實資料；成員名單與研究方向描述為待確認的草稿。</span>
+</div>
+
+<header>
+  <div class="bar">
+    <div class="wordmark">AI<span>&#8209;</span>EDA Lab</div>
+    <nav id="nav" aria-label="Sections"></nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="btn-en" aria-pressed="true">EN</button>
+      <button id="btn-zh" aria-pressed="false">中文</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HOME -->
+  <div class="view on" id="v-home">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">Design automation for the age of AI chips</span><span class="l-zh">為 AI 晶片世代打造的設計自動化</span></h2>
+    </div>
+    <p class="lede l-en">We build the algorithms that place, route and reason about circuits — and we teach machines to do the parts that were supposed to need a human.</p>
+    <p class="lede l-zh">我們研究電路的擺置、繞線與分析演算法，並讓機器學會處理那些過去被認為只有人才能做的部分。</p>
+
+    <section>
+      <div class="figures">
+        <div class="fig"><div class="n">20</div><div class="l l-en">papers at DAC &amp; ICCAD</div><div class="l l-zh">DAC / ICCAD 論文</div></div>
+        <div class="fig"><div class="n">15</div><div class="l l-en">IEEE TCAD journal papers</div><div class="l l-zh">IEEE TCAD 期刊論文</div></div>
+        <div class="fig"><div class="n">9</div><div class="l l-en">U.S. patents</div><div class="l l-zh">美國專利</div></div>
+        <div class="fig"><div class="n">3</div><div class="l l-en">ICCAD CAD Contest wins</div><div class="l l-zh">ICCAD CAD 競賽冠軍</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h3><span class="l-en">What we work on</span><span class="l-zh">研究領域</span></h3>
+      <div class="prose">
+        <p class="l-en">Electronic design automation is the software layer between a circuit idea and a manufacturable chip. It is also one of the last engineering disciplines where a great deal of expert judgment has never been written down — analog layout, floorplanning under competing constraints, reading a schematic and knowing what it does.</p>
+        <p class="l-en">The lab works on both halves of that problem: <strong>classical optimization</strong> for placement, routing and 3D integration, and <strong>learning-based methods</strong>, including large language models, for the parts that resisted formalization. Our results appear at DAC, ICCAD, DATE, ISPD and MLCAD, and several have become issued patents and contest-winning tools.</p>
+        <p class="l-zh">電子設計自動化（EDA）是介於電路構想與可製造晶片之間的軟體層，也是少數至今仍有大量專家判斷未被書面化的工程領域 —— 類比佈局、多重限制下的平面規劃、看懂一張電路圖並理解它在做什麼，都屬於這一類。</p>
+        <p class="l-zh">實驗室同時處理這個問題的兩面：用<strong>傳統最佳化方法</strong>解決擺置、繞線與三維整合，並用<strong>機器學習方法</strong>（包含大型語言模型）處理那些難以形式化的部分。研究成果發表於 DAC、ICCAD、DATE、ISPD、MLCAD 等會議，並已轉化為多項美國專利與競賽奪冠的工具。</p>
+      </div>
+    </section>
+
+    <section>
+      <h3><span class="l-en">Recent highlight</span><span class="l-zh">近期亮點</span></h3>
+      <div class="entries">
+        <div class="entry">
+          <div class="kicker">MLCAD 2025 &middot; <span class="l-en">Best Artifact Award</span><span class="l-zh">最佳成果獎</span></div>
+          <h4 class="serif">Netlistify</h4>
+          <p class="l-en">A deep-learning system that reads a circuit schematic and writes back the netlist. Recognised at the ACM/IEEE International Symposium on Machine Learning for CAD. <a class="out" href="https://github.com/NYCU-AI-EDA/Netlistify" target="_blank" rel="noopener">Source on GitHub</a></p>
+          <p class="l-zh">以深度學習讀取電路圖並還原成網表的系統，獲 ACM/IEEE 機器學習輔助設計研討會（MLCAD）最佳成果獎。<a class="out" href="https://github.com/NYCU-AI-EDA/Netlistify" target="_blank" rel="noopener">GitHub 原始碼</a></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="view" id="v-research">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">Research</span><span class="l-zh">研究方向</span></h2>
+    </div>
+    <p class="lede l-en">Five directions, all pointed at the same question: how much of chip design can be turned into an algorithm?</p>
+    <p class="lede l-zh">五個方向，指向同一個問題：晶片設計有多少部分能夠被轉化為演算法？</p>
+
+    <section>
+      <div class="note">
+        <b><span class="l-en">Needs review</span><span class="l-zh">待確認</span></b>
+        <span class="l-en">These descriptions were drafted from Prof. Lin's publication record and stated research interests. They need his corrections before the site goes live.</span>
+        <span class="l-zh">以下描述是根據老師的論文紀錄與研究興趣整理的草稿，上線前需請老師修正。</span>
+      </div>
+      <div class="entries">
+        <div class="entry">
+          <h4 class="serif l-en">AI and language models for design automation</h4>
+          <h4 class="serif l-zh">AI 與大型語言模型輔助設計自動化</h4>
+          <p class="l-en">Language models and learning-based agents are starting to read specifications, write RTL and reason about layout the way a designer does. We study where that actually holds up — applying LLMs to chip and PCB design tasks, and building the benchmarks needed to tell real capability from fluent guessing.</p>
+          <p class="l-zh">語言模型與學習式代理人已開始能閱讀規格、撰寫 RTL，並像設計者一樣推理佈局。我們研究這件事在什麼情況下真的成立 —— 將 LLM 應用於晶片與 PCB 設計任務，並建立能區分「真實能力」與「流暢猜測」的評測基準。</p>
+        </div>
+        <div class="entry">
+          <h4 class="serif l-en">Analog and mixed-signal layout automation</h4>
+          <h4 class="serif l-zh">類比與混合訊號佈局自動化</h4>
+          <p class="l-en">Analog layout resists automation because so much of it is unwritten: symmetry, matching, proximity, parasitic sensitivity. We formalize those constraints and generate layouts that respect them — placement on symmetry islands, common-centroid structures, parasitic-aware capacitor sizing — work that has produced both top-tier papers and issued U.S. patents.</p>
+          <p class="l-zh">類比佈局之所以難以自動化，是因為其中大量知識從未被寫下來：對稱、匹配、鄰近性、寄生效應敏感度。我們將這些限制形式化並自動產生符合的佈局 —— 對稱島擺置、共質心結構、考慮寄生效應的電容尺寸設計 —— 這些成果同時產出頂尖論文與多項美國專利。</p>
+        </div>
+        <div class="entry">
+          <h4 class="serif l-en">Physical design automation</h4>
+          <h4 class="serif l-zh">實體設計自動化</h4>
+          <p class="l-en">Placement, legalization and routing at modern densities. Recent work covers multibit flip-flop banking for power and timing co-optimization, GPU-accelerated logic rewriting, and patch generation under resource constraints — several of which took top places in the IEEE/ACM ICCAD CAD Contest.</p>
+          <p class="l-zh">現代密度下的擺置、合法化與繞線。近期工作包括多位元正反器合併以共同最佳化功耗與時序、GPU 加速的邏輯改寫，以及資源受限下的修補生成 —— 其中多項在 IEEE/ACM ICCAD CAD 競賽中名列前茅。</p>
+        </div>
+        <div class="entry">
+          <h4 class="serif l-en">3D integration and advanced packaging</h4>
+          <h4 class="serif l-zh">三維積體電路與先進封裝</h4>
+          <p class="l-en">Stacking dies changes what counts as a good floorplan. We work on power delivery and routing across redistribution layers, including Voronoi-diagram-based generation of multiple power planes for 3D ICs.</p>
+          <p class="l-zh">晶片堆疊改變了「好的平面規劃」的定義。我們研究跨重佈線層的供電與繞線，包含以 Voronoi 圖為基礎的三維積體電路多重電源平面生成。</p>
+        </div>
+        <div class="entry">
+          <h4 class="serif l-en">Schematic understanding and document analysis</h4>
+          <h4 class="serif l-zh">電路圖理解與文件分析</h4>
+          <p class="l-en">Decades of circuit knowledge sit locked in images — scanned schematics, datasheet figures, patent drawings. Netlistify, recipient of the 2025 MLCAD Best Artifact Award, turns circuit schematics back into netlists with deep learning, making that archive machine-readable.</p>
+          <p class="l-zh">數十年的電路知識被鎖在圖片裡 —— 掃描的電路圖、規格書插圖、專利圖說。獲得 2025 MLCAD 最佳成果獎的 Netlistify 以深度學習將電路圖轉換回網表，讓這些資料重新能被機器讀取。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="view" id="v-pub">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">Publications</span><span class="l-zh">論文著作</span></h2>
+    </div>
+    <p class="lede l-en">Generated from DBLP when the site is built, so the list keeps itself current. Patents and book chapters are maintained by hand.</p>
+    <p class="lede l-zh">網站建置時自動從 DBLP 生成，因此這份清單會自己保持最新。專利與專書章節為手動維護。</p>
+
+    <section>
+      <div class="note">
+        <b><span class="l-en">How this page works</span><span class="l-zh">這頁的運作方式</span></b>
+        <span class="l-en">Nobody types these in. The build script reads Prof. Lin's DBLP record, sorts each paper by venue and writes the page. <a class="out" href="https://dblp.org/pid/71/7353.html" target="_blank" rel="noopener">DBLP record</a></span>
+        <span class="l-zh">這頁沒有人手動輸入。建置腳本會讀取老師的 DBLP 紀錄，依會議層級自動分類後產生頁面。<a class="out" href="https://dblp.org/pid/71/7353.html" target="_blank" rel="noopener">DBLP 紀錄</a></span>
+      </div>
+    </section>
+
+    <div id="pubs"></div>
+
+    <section class="pubset">
+      <h3><span class="l-en">U.S. patents</span><span class="l-zh">美國專利</span> <span class="ct">9</span></h3>
+      <ol class="cites" id="pats"></ol>
+    </section>
+
+    <section class="pubset">
+      <h3><span class="l-en">Book chapters</span><span class="l-zh">專書章節</span> <span class="ct">2</span></h3>
+      <ol class="cites">
+        <li>R. A. Rutenbar, J. M. Cohn, <b>M. P.-H. Lin</b> and F. Baskaya, &ldquo;Layout tools for analog integrated circuits and mixed-signal system-on-chip: A survey,&rdquo; <i>EDA for IC Implementation, Circuit Design, and Process Technology</i>, CRC Press, 2nd ed., pp. 479&ndash;499, April 2016.</li>
+        <li><b>M. P.-H. Lin</b> and Y.-W. Chang, &ldquo;Hierarchical placement with layout constraint,&rdquo; <i>Analog Layout Synthesis: A Survey of Topological Approaches</i> (H. E. Graeb, ed.), Springer, pp. 61&ndash;94, October 2010.</li>
+      </ol>
+    </section>
+  </div>
+
+  <!-- PEOPLE -->
+  <div class="view" id="v-people">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">People</span><span class="l-zh">實驗室成員</span></h2>
+    </div>
+
+    <section>
+      <h3><span class="l-en">Principal investigator</span><span class="l-zh">指導教授</span></h3>
+      <div class="pi">
+        <div class="ph"><span class="l-en">Photo<br>needed</span><span class="l-zh">待提供<br>照片</span></div>
+        <div>
+          <h4 class="serif">Mark Po-Hung Lin<span class="l-zh"> 林柏宏</span></h4>
+          <div class="role l-en">Professor &middot; Institute of Pioneer Semiconductor Innovation, Industry Academia Innovation School<br>Institute of Electronics &middot; College of Artificial Intelligence &middot; NYCU</div>
+          <div class="role l-zh">教授 &middot; 產學創新研究學院 前瞻半導體研究所<br>電子研究所 &middot; 人工智慧學院 &middot; 國立陽明交通大學</div>
+          <div class="prose">
+            <p class="l-en">Ph.D., National Taiwan University. Previously with SpringSoft (2000&ndash;2007), where he co-initiated the Laker Analog Prototyping product, and on the faculty of National Chung Cheng University (2009&ndash;2019). Humboldt Research Fellow at TU Munich and JSPS Invitation Fellow at Osaka University. Chair of the IEEE CEDA Taipei Chapter (2022&ndash;2023) and the ACM SIGDA Taiwan Chapter (2017&ndash;2018).</p>
+            <p class="l-zh">國立臺灣大學博士。曾任職思源科技（2000&ndash;2007），共同發起 Laker Analog Prototyping 產品；2009&ndash;2019 年任教於國立中正大學。曾為慕尼黑工業大學洪堡學者、大阪大學 JSPS 訪問學者。IEEE CEDA 台北分會主席（2022&ndash;2023）、ACM SIGDA 台灣分會主席（2017&ndash;2018）。</p>
+            <p><a class="out" href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener"><span class="l-en">Full profile and CV</span><span class="l-zh">完整個人網頁</span></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3><span class="l-en">Students</span><span class="l-zh">學生成員</span></h3>
+      <div class="note">
+        <b><span class="l-en">Placeholder</span><span class="l-zh">佔位</span></b>
+        <span class="l-en">Roster not yet supplied. Each entry takes a name, degree programme, entry year, research topic and an optional photo.</span>
+        <span class="l-zh">名單尚未提供。每一筆需要姓名、學制、入學年、研究題目，照片可選。</span>
+      </div>
+      <div class="roster" id="roster"></div>
+    </section>
+
+    <section>
+      <h3><span class="l-en">Alumni</span><span class="l-zh">畢業生去向</span></h3>
+      <div class="note">
+        <b><span class="l-en">Recommended</span><span class="l-zh">建議加入</span></b>
+        <span class="l-en">A list of where graduates went — EDA vendors, chip design houses, foundries — is one of the most persuasive things a lab site can show a prospective student. Worth collecting.</span>
+        <span class="l-zh">畢業生的就業去向（EDA 公司、IC 設計公司、晶圓廠）是實驗室網站對新生最有說服力的內容之一，值得整理。</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- AWARDS -->
+  <div class="view" id="v-awards">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">Honors and awards</span><span class="l-zh">獲獎紀錄</span></h2>
+    </div>
+    <p class="lede l-en">Selected recognition for Prof. Lin and the lab.</p>
+    <p class="lede l-zh">老師與實驗室的部分獲獎紀錄。</p>
+    <section><div class="awards" id="awards"></div></section>
+  </div>
+
+  <!-- JOIN -->
+  <div class="view" id="v-join">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">Join the lab</span><span class="l-zh">加入實驗室</span></h2>
+    </div>
+    <p class="lede l-en">We are recruiting Ph.D. students, M.S. students and undergraduate project students through the Institute of Pioneer Semiconductor Innovation and the Institute of Electronics.</p>
+    <p class="lede l-zh">徵求博士生、碩士生（前瞻所、電子所）與專題生。</p>
+
+    <section>
+      <h3><span class="l-en">Open positions</span><span class="l-zh">招募對象</span></h3>
+      <div class="prose">
+        <p class="l-en">Prof. Lin's lab is recruiting highly motivated Ph.D. and M.S. students, and full-time research assistants, who are interested in solving challenging electronic design automation problems and pursuing research excellence in AI and EDA. Competitive compensation is offered for qualified candidates.</p>
+        <p class="l-en">Please contact Prof. Lin by email with your resume, bio, transcripts and any supporting materials.</p>
+        <p class="l-zh">實驗室徵求對電子設計自動化與 AI 研究有熱忱的博士生、碩士生及專任研究助理，並提供具競爭力的研究津貼。</p>
+        <p class="l-zh">請將履歷、自傳、成績單及其他佐證資料以電子郵件寄給林柏宏老師。</p>
+      </div>
+    </section>
+
+    <section>
+      <h3><span class="l-en">Questions students ask</span><span class="l-zh">常見問題</span></h3>
+      <div class="faq" id="faq"></div>
+    </section>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="view" id="v-contact">
+    <div class="title">
+      <h2 class="serif"><span class="l-en">Contact</span><span class="l-zh">聯絡資訊</span></h2>
+    </div>
+    <section>
+      <dl class="kv">
+        <div class="row"><dt><span class="l-en">Lab</span><span class="l-zh">實驗室</span></dt><dd><span class="l-en">Engineering Building 6, Room 457</span><span class="l-zh">工程六館 457 室</span></dd></div>
+        <div class="row"><dt><span class="l-en">Office</span><span class="l-zh">辦公室</span></dt><dd>EF369</dd></div>
+        <div class="row"><dt><span class="l-en">Email</span><span class="l-zh">電子郵件</span></dt><dd>mphlin [at] nycu.edu.tw</dd></div>
+        <div class="row"><dt><span class="l-en">Telephone</span><span class="l-zh">電話</span></dt><dd>+886-3-5712121 ext. 58524</dd></div>
+        <div class="row"><dt><span class="l-en">Address</span><span class="l-zh">地址</span></dt><dd><span class="l-en">Institute of Electronics, National Yang Ming Chiao Tung University<br>1001 University Road, Hsinchu 300, Taiwan</span><span class="l-zh">國立陽明交通大學 電子研究所<br>300 新竹市大學路 1001 號</span></dd></div>
+      </dl>
+    </section>
+  </div>
+</main>
+
+<script>
+const PUBS = [{"tier":"regular","venue":"DATE","venueFull":"DATE","year":2026,"title":"Optimizing Multibit Flip-Flop Banking via Agile In-Placement PPA Co-Optimization","authors":["Huan-Yuan Chen","Yu-Ruei Lin","Mark Po-Hung Lin","Hung-Ming Chen"],"volume":null,"pages":"1-3","url":"https://doi.org/10.23919/DATE69613.2026.11539424"},{"tier":"regular","venue":"MLCAD","venueFull":"MLCAD","year":2025,"title":"Netlistify: Transforming Circuit Schematics into Netlists with Deep Learning","authors":["Chun-Yen Huang","Hsuan-I Chen","Hao-Wen Ho","Pei-Hsin Kang","Mark Po-Hung Lin","Wen-Hao Liu","Haoxing Ren"],"volume":null,"pages":"1-8","url":"https://doi.org/10.1109/MLCAD65511.2025.11189145"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2024,"title":"Voronoi Diagram-based Multiple Power Plane Generation on Redistribution Layers in 3D ICs","authors":["Chia-Wei Lin","Jing-Yao Weng","I-Te Lin","Ho-Chieh Hsu","Chia-Ming Liu","Mark Po-Hung Lin"],"volume":null,"pages":"19:1-19:6","url":"https://doi.org/10.1145/3649329.3657315"},{"tier":"journal","venue":"IEEE Trans Autom. Sci. Eng.","venueFull":"IEEE TASE","year":2024,"title":"SSIOE: Self-Supervised Indoor Occupancy Estimation for Intelligent Building Management","authors":["Sin-Han Huang","Tzu-Yin Chao","Beatrice Adelaide Wibisono","Mark Po-Hung Lin","Ching-Chun Huang"],"volume":"21","pages":"3025-3038","url":"https://doi.org/10.1109/TASE.2023.3273151"},{"tier":"regular","venue":"ISPD","venueFull":"ISPD","year":2024,"title":"Reinforcement Learning or Simulated Annealing for Analog Placement? A Study based on Bounded-Sliceline Grids","authors":["Mark Po-Hung Lin","Chou-Chen Lee","Yi-Chao Hsieh"],"volume":null,"pages":"143-150","url":"https://doi.org/10.1145/3626184.3635281"},{"tier":"regular","venue":"ASP-DAC","venueFull":"ASP-DAC","year":2023,"title":"On Automating Finger-Cap Array Synthesis with Optimal Parasitic Matching for Custom SAR ADC","authors":["Cheng-Yu Chiang","Chia-Lin Hu","Mark Po-Hung Lin","Yu-Szu Chung","Shyh-Jye Jou","Jieh-Tsorng Wu","Shiuh-Hua Wood Chiang","Chien-Nan Jimmy Liu","Hung-Ming Chen"],"volume":null,"pages":"352-357","url":"https://doi.org/10.1145/3566097.3567878"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2023,"title":"Late Breaking Results: PVT-Sensitive Delay Fitting for High-Performance Computing","authors":["Ding-Hao Wang","Shuo-Hung Hsu","Shu-Hsiang Yang","Pei-Ju Lin","Hui-Ting Yang","Mark Po-Hung Lin"],"volume":null,"pages":"1-2","url":"https://doi.org/10.1109/DAC56929.2023.10247900"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2023,"title":"On Reducing LDE Variations in Modern Analog Placement","authors":["A. K. Thasreefa","Abhishek Patyal","Hao-Yu Chi","Mark Po-Hung Lin","Hung-Ming Chen"],"volume":"42","pages":"1268-1279","url":"https://doi.org/10.1109/TCAD.2022.3199307"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2023,"title":"Pole-Aware Analog Layout Synthesis Considering Monotonic Current Flows and Wire Crossings","authors":["Abhishek Patyal","Hung-Ming Chen","Mark Po-Hung Lin","Guan-Qi Fang","Simon Yi-Hung Chen"],"volume":"42","pages":"266-279","url":"https://doi.org/10.1109/TCAD.2022.3174166"},{"tier":"regular","venue":"SMACD","venueFull":"SMACD","year":2023,"title":"Layout Synthesis of Analog Primitive Cells with Variational Autoencoder","authors":["Po-Chun Wang","Mark Po-Hung Lin","Chien-Nan Jimmy Liu","Hung-Ming Chen"],"volume":null,"pages":"1-4","url":"https://doi.org/10.1109/SMACD58065.2023.10192172"},{"tier":"regular","venue":"ASP-DAC","venueFull":"ASP-DAC","year":2022,"title":"Common-Centroid Layout for Active and Passive Devices: A Review and the Road Ahead","authors":["Nibedita Karmokar","Meghna Madhusudan","Arvind K. Sharma","Ramesh Harjani","Mark Po-Hung Lin","Sachin S. Sapatnekar"],"volume":null,"pages":"114-121","url":"https://doi.org/10.1109/ASP-DAC52403.2022.9712576"},{"tier":"regular","venue":"MLCAD","venueFull":"MLCAD","year":2022,"title":"Automatic Analog Schematic Diagram Generation based on Building Block Classification and Reinforcement Learning","authors":["Hung-Yun Hsu","Mark Po-Hung Lin"],"volume":null,"pages":"43-48","url":"https://doi.org/10.1145/3551901.3556486"},{"tier":"regular","venue":"SMACD","venueFull":"SMACD","year":2022,"title":"On Optimizing Capacitor Array Design for Advanced Node SAR ADC","authors":["Cheng-Yu Chiang","Chia-Lin Hu","Kang-Yu Chang","Mark Po-Hung Lin","Shyh-Jye Jou","Hung-Yu Chen","Chien-Nan Jimmy Liu","Hung-Ming Chen"],"volume":null,"pages":"1-4","url":"https://doi.org/10.1109/SMACD55068.2022.9816200"},{"tier":"regular","venue":"ASP-DAC","venueFull":"ASP-DAC","year":2021,"title":"A Novel Technology Mapper for Complex Universal Gates","authors":["Meng-Che Wu","Ai Quoc Dao","Mark Po-Hung Lin"],"volume":null,"pages":"475-480","url":"https://doi.org/10.1145/3394885.3431561"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2021,"title":"A Novel Machine-Learning based SoC Performance Monitoring Methodology under Wide-Range PVT Variations with Unknown Critical Paths","authors":["Ding-Hao Wang","Pei-Ju Lin","Hui-Ting Yang","Ching-An Hsu","Sin-Han Huang","Mark Po-Hung Lin"],"volume":null,"pages":"1370-1371","url":"https://doi.org/10.1109/DAC18074.2021.9586155"},{"tier":"regular","venue":"MLCAD","venueFull":"MLCAD","year":2021,"title":"Massive Figure Extraction and Classification in Electronic Component Datasheets for Accelerating PCB Design Preparation","authors":["Kuan-Chun Chen","Chou-Chen Lee","Mark Po-Hung Lin","Yan-Jhih Wang","Yi-Ting Chen"],"volume":null,"pages":"1-6","url":"https://doi.org/10.1109/MLCAD52597.2021.9531275"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2020,"title":"Late Breaking Results: Automatic Adaptive MOM Capacitor Cell Generation for Analog and Mixed-Signal Layout Design","authors":["Tzu-Wei Wang","Po-Chang Wu","Mark Po-Hung Lin"],"volume":null,"pages":"1-2","url":"https://doi.org/10.1109/DAC18072.2020.9218609"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2020,"title":"Late Breaking Results: Pole-aware Analog Placement Considering Monotonic Current Flow and Crossing-Wire Minimization","authors":["Abhishek Patyal","Hung-Ming Chen","Mark Po-Hung Lin"],"volume":null,"pages":"1-2","url":"https://doi.org/10.1109/DAC18072.2020.9218634"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2020,"title":"Achieving Analog Layout Integrity through Learning and Migration Invited Talk","authors":["Mark Po-Hung Lin","Hao-Yu Chi","Abhishek Patyal","Zheng-Yao Liu","Jun-Jie Zhao","Chien-Nan Jimmy Liu","Hung-Ming Chen"],"volume":null,"pages":"55:1-55:8","url":"https://doi.org/10.1145/3400302.3415752"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2020,"title":"Overview of 2020 CAD Contest at ICCAD","authors":["Ing-Chao Lin","Ulf Schlichtmann","Tsung-Wei Huang","Mark Po-Hung Lin"],"volume":null,"pages":"67:1-67:3","url":"https://doi.org/10.1145/3400302.3415741"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2020,"title":"Corner-Stitching-Based Multilayer Obstacle-Avoiding Component-to-Component Rectilinear Minimum Spanning Tree Construction","authors":["Yen-Yu Su","Shuo-Hui Wang","Wei-Liang Wu","Mark Po-Hung Lin"],"volume":"39","pages":"675-685","url":"https://doi.org/10.1109/TCAD.2018.2890531"},{"tier":"regular","venue":"DATE","venueFull":"DATE","year":2019,"title":"IR-aware Power Net Routing for Multi-Voltage Mixed-Signal Design","authors":["Shuo-Hui Wang","Guan-Hong Liou","Yen-Yu Su","Mark Po-Hung Lin"],"volume":null,"pages":"72-77","url":"https://doi.org/10.23919/DATE.2019.8715166"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2019,"title":"Overview of 2019 CAD Contest at ICCAD","authors":["Ulf Schlichtmann","Sabya Das","Ing-Chao Lin","Mark Po-Hung Lin"],"volume":null,"pages":"1-2","url":"https://doi.org/10.1109/ICCAD45719.2019.8942133"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2018,"title":"Efficient computation of ECO patch functions","authors":["Ai Quoc Dao","Nian-Ze Lee","Li-Cheng Chen","Mark Po-Hung Lin","Jie-Hong R. Jiang","Alan Mishchenko","Robert K. Brayton"],"volume":null,"pages":"51:1-51:6","url":"https://doi.org/10.1145/3195970.3196039"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2018,"title":"SAT-Based Fault Equivalence Checking in Functional Safety Verification","authors":["Ai Quoc Dao","Mark Po-Hung Lin","Alan Mishchenko"],"volume":"37","pages":"3198-3205","url":"https://doi.org/10.1109/TCAD.2018.2791465"},{"tier":"regular","venue":"SMACD","venueFull":"SMACD","year":2018,"title":"Classifying Analog and Digital Circuits with Machine Learning Techniques Toward Mixed-Signal Design Automation","authors":["Guan-Hong Liou","Shuo-Hui Wang","Yan-Yu Su","Mark Po-Hung Lin"],"volume":null,"pages":"173-176","url":"https://doi.org/10.1109/SMACD.2018.8434884"},{"tier":"preprint","venue":"CoRR","venueFull":"CoRR","year":2017,"title":"Novel CMOS RFIC Layout Generation with Concurrent Device Placement and Fixed-Length Microstrip Routing","authors":["Tsun-Ming Tseng","Bing Li 0005","Ching-Feng Yeh","Hsiang-Chieh Jhan","Zuo-Min Tsai","Mark Po-Hung Lin","Ulf Schlichtmann"],"volume":"abs/1705.04991","pages":null,"url":null},{"tier":"regular","venue":"DATE","venueFull":"DATE","year":2017,"title":"High-density MOM capacitor array with novel mortise-tenon structure for low-power SAR ADC","authors":["Nai-Chen Chen","Pang-Yen Chou","Helmut E. Graeb","Mark Po-Hung Lin"],"volume":null,"pages":"1757-1762","url":"https://doi.org/10.23919/DATE.2017.7927277"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2017,"title":"State retention for power gated design with non-uniform multi-bit retention latches","authors":["Guo-Gin Fan","Mark Po-Hung Lin"],"volume":null,"pages":"607-614","url":"https://doi.org/10.1109/ICCAD.2017.8203833"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2017,"title":"An Efficient Two-Phase ILP-Based Algorithm for Precise CMOS RFIC Layout Generation","authors":["Tsun-Ming Tseng","Bing Li 0005","Ching-Feng Yeh","Hsiang-Chieh Jhan","Zuo-Min Tsai","Mark Po-Hung Lin","Ulf Schlichtmann"],"volume":"36","pages":"1313-1326","url":"https://doi.org/10.1109/TCAD.2016.2629445"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2017,"title":"Parasitic-Aware Common-Centroid Binary-Weighted Capacitor Layout Generation Integrating Placement, Routing, and Unit Capacitor Sizing","authors":["Mark Po-Hung Lin","Vincent Wei-Hao Hsiao","Chun-Yu Lin","Nai-Chen Chen"],"volume":"36","pages":"1274-1286","url":"https://doi.org/10.1109/TCAD.2017.2685598"},{"tier":"journal","venue":"IEEE Trans. Very Large Scale Integr. Syst.","venueFull":"IEEE TVLSI","year":2017,"title":"Matched-Routing Common-Centroid 3-D MOM Capacitors for Low-Power Data Converters","authors":["Pang-Yen Chou","Nai-Chen Chen","Mark Po-Hung Lin","Helmut Graeb"],"volume":"25","pages":"2234-2247","url":"https://doi.org/10.1109/TVLSI.2017.2687980"},{"tier":"regular","venue":"ISVLSI","venueFull":"ISVLSI","year":2017,"title":"AIsim: Functional Simulator for Analog-to-Information Perceptual Systems","authors":["Hong Liu","Zheyu Liu","Fei Qiao","Mark Po-Hung Lin","Qi Wei 0001","Huazhong Yang"],"volume":null,"pages":"507-512","url":"https://doi.org/10.1109/ISVLSI.2017.94"},{"tier":"journal","venue":"Integr.","venueFull":"Integration, the VLSI Journal","year":2017,"title":"Minimizing detection-to-boosting latency toward low-power error-resilient circuits","authors":["Chih-Cheng Hsu","Masanori Hashimoto","Mark Po-Hung Lin"],"volume":"58","pages":"236-244","url":"https://doi.org/10.1016/j.vlsi.2017.01.002"},{"tier":"journal","venue":"ACM Trans. Design Autom. Electr. Syst.","venueFull":"ACM TODAES","year":2016,"title":"Parasitic-Aware Common-Centroid FinFET Placement and Routing for Current-Ratio Matching","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Xin Li 0001","Tsung-Yi Ho"],"volume":"21","pages":"39:1-39:22","url":"https://doi.org/10.1145/2856031"},{"tier":"regular","venue":"ASP-DAC","venueFull":"ASP-DAC","year":2016,"title":"Recent research development and new challenges in analog layout synthesis","authors":["Mark Po-Hung Lin","Yao-Wen Chang","Chih-Ming Hung"],"volume":null,"pages":"617-622","url":"https://doi.org/10.1109/ASPDAC.2016.7428080"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2016,"title":"Novel CMOS RFIC layout generation with concurrent device placement and fixed-length microstrip routing","authors":["Tsun-Ming Tseng","Bing Li 0005","Ching-Feng Yeh","Hsiang-Chieh Jhan","Zuo-Min Tsai","Mark Po-Hung Lin","Ulf Schlichtmann"],"volume":null,"pages":"101:1-101:6","url":"https://doi.org/10.1145/2897937.2898052"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2016,"title":"DeMixGen: Deterministic Mixed-Signal Layout Generation With Separated Analog and Digital Signal Paths","authors":["Mark Po-Hung Lin","Po-Hsun Chang","Shuenn-Yuh Lee","Helmut E. Graeb"],"volume":"35","pages":"1229-1242","url":"https://doi.org/10.1109/TCAD.2015.2501295"},{"tier":"regular","venue":"SLIP","venueFull":"SLIP","year":2016,"title":"Latch Clustering for Minimizing Detection-to-Boosting Latency Toward Low-Power Resilient Circuits","authors":["Chih-Cheng Hsu","Mark Po-Hung Lin","Masanori Hashimoto"],"volume":null,"pages":"2:1-2:6","url":"https://doi.org/10.1145/2947357.2947364"},{"tier":"regular","venue":"ECCTD","venueFull":"ECCTD","year":2015,"title":"Analog layout synthesis with knowledge mining","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Tsung-Yi Ho"],"volume":null,"pages":"1-4","url":"https://doi.org/10.1109/ECCTD.2015.7300111"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2015,"title":"A Novel Analog Physical Synthesis Methodology Integrating Existent Design Expertise","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Tung-Chieh Chen","Ching-Feng Yeh","Xin Li 0001","Tsung-Yi Ho"],"volume":"34","pages":"199-212","url":"https://doi.org/10.1109/TCAD.2014.2379630"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2015,"title":"Clock-Tree Aware Multibit Flip-Flop Generation During Placement for Power Optimization","authors":["Mark Po-Hung Lin","Chih-Cheng Hsu","Yu-Chuan Chen"],"volume":"34","pages":"280-292","url":"https://doi.org/10.1109/TCAD.2014.2376988"},{"tier":"regular","venue":"ISPD","venueFull":"ISPD","year":2015,"title":"Common-Centroid FinFET Placement Considering the Impact of Gate Misalignment","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Xin Li 0001","Tsung-Yi Ho"],"volume":null,"pages":"25-31","url":"https://doi.org/10.1145/2717764.2717769"},{"tier":"journal","venue":"Integr.","venueFull":"Integration, the VLSI Journal","year":2015,"title":"Crosstalk-aware multi-bit flip-flop generation for power optimization","authors":["Chih-Cheng Hsu","Mark Po-Hung Lin","Yao-Tsung Chang"],"volume":"48","pages":"146-157","url":"https://doi.org/10.1016/j.vlsi.2014.08.002"},{"tier":"regular","venue":"VLSI-DAT","venueFull":"VLSI-DAT","year":2015,"title":"Low-power gated clock tree optimization for three-dimensional integrated circuits","authors":["Yu-Chuan Chen","Chih-Cheng Hsu","Mark Po-Hung Lin"],"volume":null,"pages":"1-4","url":"https://doi.org/10.1109/VLSI-DAT.2015.7114530"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2014,"title":"Parasitic-aware Sizing and Detailed Routing for Binary-weighted Capacitors in Charge-scaling DAC","authors":["Mark Po-Hung Lin","Vincent Wei-Hao Hsiao","Chun-Yu Lin"],"volume":null,"pages":"165:1-165:6","url":"https://doi.org/10.1145/2593069.2593179"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2014,"title":"More effective power-gated circuit optimization with multi-bit retention registers","authors":["Shu-Hung Lin","Mark Po-Hung Lin"],"volume":null,"pages":"213-217","url":"https://doi.org/10.1109/ICCAD.2014.7001354"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2014,"title":"Exploring Feasibilities of Symmetry Islands and Monotonic Current Paths in Slicing Trees for Analog Placement","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Tung-Chieh Chen","Ching-Feng Yeh","Tsung-Yi Ho","Bin-Da Liu"],"volume":"33","pages":"879-892","url":"https://doi.org/10.1109/TCAD.2014.2305831"},{"tier":"regular","venue":"ISPD","venueFull":"ISPD","year":2014,"title":"Power optimization for clock network with clock gate cloning and flip-flop merging","authors":["Shih-Chuan Lo","Chih-Cheng Hsu","Mark Po-Hung Lin"],"volume":null,"pages":"77-84","url":"https://doi.org/10.1145/2560519.2560520"},{"tier":"regular","venue":"ECCTD","venueFull":"ECCTD","year":2013,"title":"Lithography-aware 1-dimensional cell generation","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Tung-Chieh Chen","Tsung-Yi Ho","Yu-Chuan Chen"],"volume":null,"pages":"1-4","url":"https://doi.org/10.1109/ECCTD.2013.6662310"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2013,"title":"In-placement clock-tree aware multi-bit flip-flop generation for power optimization","authors":["Chih-Cheng Hsu","Yu-Chuan Chen","Mark Po-Hung Lin"],"volume":null,"pages":"592-598","url":"https://doi.org/10.1109/ICCAD.2013.6691177"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2013,"title":"1-D Cell Generation With Printability Enhancement","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Tung-Chieh Chen","Tsung-Yi Ho","Yu-Chuan Chen","Shun-Ren Siao","Shu-Hung Lin"],"volume":"32","pages":"419-432","url":"https://doi.org/10.1109/TCAD.2012.2226454"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2013,"title":"Common-Centroid Capacitor Layout Generation Considering Device Matching and Parasitic Minimization","authors":["Mark Po-Hung Lin","Yi-Ting He","Vincent Wei-Hao Hsiao","Rong-Guey Chang","Shuenn-Yuh Lee"],"volume":"32","pages":"991-1002","url":"https://doi.org/10.1109/TCAD.2012.2226457"},{"tier":"regular","venue":"ASP-DAC","venueFull":"ASP-DAC","year":2012,"title":"Crosstalk-aware power optimization with multi-bit flip-flops","authors":["Chih-Cheng Hsu","Yao-Tsung Chang","Mark Po-Hung Lin"],"volume":null,"pages":"431-436","url":"https://doi.org/10.1109/ASPDAC.2012.6164987"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2012,"title":"Performance-driven analog placement considering monotonic current paths","authors":["Po-Hsun Wu","Mark Po-Hung Lin","Yang-Ru Chen","Bing-Shiun Chou","Tung-Chieh Chen","Tsung-Yi Ho","Bin-Da Liu"],"volume":null,"pages":"613-619","url":"https://doi.org/10.1145/2429384.2429516"},{"tier":"regular","venue":"ECCTD","venueFull":"ECCTD","year":2011,"title":"Recent research in analog placement considering thermal gradient","authors":["Mark Po-Hung Lin"],"volume":null,"pages":"349-352","url":"https://doi.org/10.1109/ECCTD.2011.6043358"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2011,"title":"A corner stitching compliant B∗-tree representation and its applications to analog placement","authors":["Hui-Fang Tsao","Pang-Yen Chou","Shih-Lun Huang","Yao-Wen Chang","Mark Po-Hung Lin","Duan-Ping Chen","Dick Liu"],"volume":null,"pages":"507-511","url":"https://doi.org/10.1109/ICCAD.2011.6105377"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2011,"title":"Post-Placement Power Optimization With Multi-Bit Flip-Flops","authors":["Mark Po-Hung Lin","Chih-Cheng Hsu","Yao-Tsung Chang"],"volume":"30","pages":"1870-1882","url":"https://doi.org/10.1109/TCAD.2011.2165716"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2011,"title":"Thermal-Driven Analog Placement Considering Device Matching","authors":["Mark Po-Hung Lin","Hongbo Zhang 0001","Martin D. F. Wong","Yao-Wen Chang"],"volume":"30","pages":"325-336","url":"https://doi.org/10.1109/TCAD.2010.2097308"},{"tier":"journal","venue":"Microelectron. J.","venueFull":"Microelectronics Journal","year":2011,"title":"Automated synthesis of discrete-time sigma-delta modulators from system architecture to circuit netlist","authors":["Shuenn-Yuh Lee","Chih-Yuan Chen","Jia-Hua Hong","Rong-Guey Chang","Mark Po-Hung Lin"],"volume":"42","pages":"347-357","url":"https://doi.org/10.1016/j.mejo.2010.11.004"},{"tier":"top","venue":"ICCAD","venueFull":"ICCAD","year":2010,"title":"Post-placement power optimization with multi-bit flip-flops","authors":["Yao-Tsung Chang","Chih-Cheng Hsu","Mark Po-Hung Lin","Yu-Wen Tsai","Sheng-Fong Chen"],"volume":null,"pages":"218-223","url":"https://doi.org/10.1109/ICCAD.2010.5654155"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2009,"title":"Thermal-driven analog placement considering device matching","authors":["Mark Po-Hung Lin","Hongbo Zhang 0001","Martin D. F. Wong","Yao-Wen Chang"],"volume":null,"pages":"593-598","url":"https://doi.org/10.1145/1629911.1630064"},{"tier":"regular","venue":"DATE","venueFull":"DATE","year":2009,"title":"Analog layout synthesis - Recent advances in topological approaches","authors":["Helmut Gräb","Florin Balasa","Rafael Castro-López","Yu-Wei Chang 0002","Francisco V. Fernández 0001","Mark Po-Hung Lin","Martin Strasser"],"volume":null,"pages":"274-279","url":"http://dl.acm.org/citation.cfm?id=1874684"},{"tier":"journal","venue":"IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.","venueFull":"IEEE TCAD","year":2009,"title":"Analog Placement Based on Symmetry-Island Formulation","authors":["Mark Po-Hung Lin","Yao-Wen Chang","Shyh-Chang Lin"],"volume":"28","pages":"791-804","url":"https://doi.org/10.1109/TCAD.2009.2017433"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2008,"title":"Analog placement based on hierarchical module clustering","authors":["Mark Po-Hung Lin","Shyh-Chang Lin"],"volume":null,"pages":"50-55","url":"https://doi.org/10.1145/1391469.1391484"},{"tier":"top","venue":"DAC","venueFull":"DAC","year":2007,"title":"Analog Placement Based on Novel Symmetry-Island Formulation","authors":["Mark Po-Hung Lin","Shyh-Chang Lin"],"volume":null,"pages":"465-470","url":"https://doi.org/10.1145/1278480.1278601"}];
+
+const PATENTS = [
+  {inventors:"H.-Y. Hsu, P.-H. Lin and Y.-T. Hsieh", title:"Method for generating analog schematic diagrams based on building block classification and reinforcement learning", no:"12,475,291", date:"November 18, 2025"},
+  {inventors:"P.-H. Lin, V. W. Hsiao, C.-Y. Lin, N.-C. Chen and Y.-T. Hsieh", title:"Method for parasitic-aware capacitor sizing and layout generation", no:"10,635,771", date:"April 28, 2020"},
+  {inventors:"T.-C. Chen, P.-H. Wu, P.-H. Lin and T.-Y. Ho", title:"Knowledge-based analog layout generator", no:"9,256,706", date:"February 9, 2016"},
+  {inventors:"P.-H. Lin, Y.-Y. He and W.-H. Hsiao", title:"Method of common-centroid IC layout generation", no:"8,751,995", date:"June 10, 2014"},
+  {inventors:"P.-H. Lin", title:"Analog IC placement using symmetry-islands", no:"7,877,718", date:"January 25, 2011"},
+  {inventors:"P.-H. Lin, W.-C. Chao and S.-C. Lin", title:"Hierarchical analog IC placement subject to symmetry, matching, and proximity constraints", no:"7,873,928", date:"January 18, 2011"},
+  {inventors:"P.-H. Lin, H.-C. Yu, T.-H. Tsai, S.-C. Lin and S.-H. Bai", title:"Analog and mixed-signal IC layout system", no:"7,739,646", date:"June 15, 2010"},
+  {inventors:"T.-H. Tsai, P.-H. Lin, S.-C. Lin and H.-C. Yu", title:"Rule-based schematic diagram generator", no:"7,386,823", date:"June 10, 2008"},
+  {inventors:"P.-H. Lin and S.-C. Lin", title:"Schematic diagram generation and display system", no:"7,178,123", date:"February 13, 2007"}
+];
+
+const AWARDS = [
+  {year:"2025", en:"Best Artifact Award, ACM/IEEE International Symposium on Machine Learning for CAD — Netlistify", zh:"ACM/IEEE 機器學習輔助設計研討會（MLCAD）最佳成果獎 — Netlistify"},
+  {year:"2024", en:"Outstanding Teaching Award, National Yang Ming Chiao Tung University", zh:"國立陽明交通大學 113 學年度 優良教學獎"},
+  {year:"2024", en:"Outstanding Electrical Engineering Professor Award, Chinese Institute of Electrical Engineering", zh:"中國電機工程學會 傑出電機工程教授獎"},
+  {year:"2024", en:"2nd place, IEEE/ACM ICCAD CAD Contest — Problem C, GPU-accelerated logic rewriting", zh:"IEEE/ACM ICCAD CAD 競賽 第二名 — Problem C，GPU 加速邏輯改寫"},
+  {year:"2024", en:"3rd place, IEEE/ACM ICCAD CAD Contest — Problem B, power and timing optimization using multibit flip-flops", zh:"IEEE/ACM ICCAD CAD 競賽 第三名 — Problem B，多位元正反器功耗與時序最佳化"},
+  {year:"2019", en:"Academia Sinica Research Award for Junior Investigators", zh:"中央研究院 年輕學者研究著作獎"},
+  {year:"2019", en:"Best Paper Award nominee, DATE 2019 — 834 submissions, 202 accepted, 21 nominations", zh:"DATE 2019 最佳論文獎提名 — 834 篇投稿、202 篇接受、21 篇提名"},
+  {year:"2018", en:"MOST Research Grant for Excellent Young Scholars", zh:"107 學年度 科技部 優秀年輕學者研究計畫"},
+  {year:"2017", en:"1st place, IEEE/ACM ICCAD CAD Contest — Problem A, resource-aware patch generation", zh:"IEEE/ACM ICCAD CAD 競賽 第一名 — Problem A，資源感知修補生成"},
+  {year:"2017", en:"1st place, IEEE/ACM ICCAD CAD Contest — Problem B, net open location finder with obstacles", zh:"IEEE/ACM ICCAD CAD 競賽 第一名 — Problem B，含障礙物之斷路定位"},
+  {year:"2017", en:"Excellence Award, Taiwan Comprehensive University System Young Scholar Innovation Award", zh:"106 學年度 臺灣綜合大學系統 年輕學者創新研究選拔 優等獎"},
+  {year:"2017", en:"IEEE Tainan Section Himax Award", zh:"IEEE 台南分會 奇景光電獎"},
+  {year:"2016", en:"1st place, IEEE/ACM ICCAD CAD Contest — Problem A, identical fault search", zh:"IEEE/ACM ICCAD CAD 競賽 第一名 — Problem A，等效故障搜尋"},
+  {year:"2015", en:"JSPS Invitation Fellowship for Research in Japan, Japan Society for the Promotion of Science", zh:"日本學術振興會（JSPS）訪日研究獎助"},
+  {year:"2015", en:"MOST Research Grant for Excellent Young Scholars", zh:"104 學年度 科技部 優秀年輕學者研究計畫"},
+  {year:"2015", en:"Carl Friedrich von Siemens Fellowship Supplement, Carl Friedrich von Siemens Foundation", zh:"西門子基金會 Carl Friedrich von Siemens 獎助"},
+  {year:"2014", en:"IEEE Tainan Section Best GOLD Member Award", zh:"IEEE 台南分會 最佳 GOLD 會員獎"},
+  {year:"2014", en:"Excellence Award, Taiwan Comprehensive University System Young Scholar Innovation Award", zh:"103 學年度 臺灣綜合大學系統 年輕學者創新研究選拔 優等獎"},
+  {year:"2014", en:"Outstanding Young Electrical Engineer Award, Chinese Institute of Electrical Engineering", zh:"103 學年度 中國電機工程學會 優秀青年電機工程師獎"},
+  {year:"2014", en:"Distinguished Young Scholar Award, Taiwan IC Design Society", zh:"103 學年度 臺灣積體電路設計學會 傑出年輕學者獎"},
+  {year:"2013", en:"Humboldt Research Fellowship for Experienced Researchers, Alexander von Humboldt Foundation", zh:"德國宏博基金會（AvH）資深研究學者獎助"},
+  {year:"2013", en:"IEEE Tainan Section Macronix Award", zh:"IEEE 台南分會 旺宏獎"},
+  {year:"2012", en:"Young Scholar Award, National Chung Cheng University", zh:"101 學年度 國立中正大學 青年學者獎"}
+];
+
+const FAQ = [
+  {qEn:"What does the lab work on?",
+   qZh:"實驗室的研究方向是什麼？",
+   aEn:"Electronic design automation (EDA), AI for EDA, AI and language models for chip and PCB design, physical design automation, analog design automation, 3D IC design automation, PCB design automation, and document analysis and recognition.",
+   aZh:"電子設計自動化（EDA）、AI for EDA、以 AI/LLM 進行晶片與 PCB 設計、實體設計自動化、類比設計自動化、三維積體電路設計自動化、PCB 設計自動化、文件分析與辨識等。"},
+  {qEn:"Are there industry collaborations and internships?",
+   qZh:"實驗室有企業合作和實習機會嗎？",
+   aEn:"The lab maintains close partnerships with companies in Taiwan and abroad, which keeps our research problems grounded in real industrial needs and funds substantial research stipends for students. Several partners also offer internships, so students can work alongside industry engineers on problems as they actually appear in practice.",
+   aZh:"實驗室與多家國內外企業建立了緊密的合作關係，深度融合產業需求與學術研究。每一家企業都帶來不同的挑戰與機會，讓研究題目更加多元，這些合作也為同學提供豐厚的研究津貼。除了津貼，部分企業亦提供實習機會，讓同學走出實驗室，進入實際工作環境，與業界專業人士一起解決真實問題。"},
+  {qEn:"Are there opportunities to do research abroad?",
+   qZh:"實驗室有出國研究和實習機會嗎？",
+   aEn:"Most of our students come through the Industry Academia Innovation School, which brings in internationally recognised fellows and faculty from leading universities as co-advisors, and funds short research visits abroad. Prof. Lin recommends promising students for collaborative research at top institutions in Europe, the U.S. and Japan.",
+   aZh:"實驗室同學主要來自產學創新研究學院，該學院提供豐富的國際合作機會與資源，邀請多位國際知名院士與國外頂尖大學教授共同指導學生，並提供出國短期研究津貼。老師會推薦有潛力的同學前往歐美日頂尖學府進行合作研究，與不同文化背景的學者、研究生深度交流，提升研究能力並拓展國際視野。"},
+  {qEn:"Will I get to present at major international conferences?",
+   qZh:"有機會出國參加頂尖國際會議嗎？",
+   aEn:"Yes. Prof. Lin actively encourages students to present their work and covers travel costs in full — including the top EDA conferences, DAC and ICCAD, as well as DATE, ISPD, ASP-DAC and MLCAD.",
+   aZh:"老師非常鼓勵同學將研究成果發表至國際會議進行口頭報告，並給予全額差旅費補助，包括 EDA 領域頂尖國際會議 DAC、ICCAD，以及重要國際會議 DATE、ISPD、ASP-DAC、MLCAD 等。"},
+  {qEn:"What background do I need?",
+   qZh:"加入實驗室需要哪些先備知識？",
+   aEn:"C/C++/Python programming, data structures and algorithms, logic design, and VLSI design.",
+   aZh:"C/C++/Python 程式設計能力、資料結構與演算法、邏輯設計、VLSI 設計等。"},
+  {qEn:"What if I don't have all of that yet?",
+   qZh:"如果沒有這些先備知識，仍然可以加入實驗室嗎？",
+   aEn:"Beginners are welcome. If you are willing to learn and not put off by hard problems, Prof. Lin and the senior students will get you up to speed quickly enough to start real research.",
+   aZh:"實驗室十分歡迎有熱忱的新手加入。即便一開始缺乏部分基礎知識，只要有強烈的學習意願與不懼挑戰的精神，在老師及學長姐的引導下，仍可很快掌握相關知識並投入研究工作。"},
+  {qEn:"How does Prof. Lin advise students?",
+   qZh:"老師指導學生的方式？",
+   aEn:"Open and self-directed. Beyond the weekly group meeting and regular meetings with industry partners, Prof. Lin is available any time students want to talk through direction, progress, methodology or paper writing.",
+   aZh:"開放自由，讓同學自動自發、自我管理。除了每週固定的 group meeting 以及與合作單位的定期會議，老師隨時開放同學約時間討論研究方向、研究進度、研究方法及論文撰寫。"},
+  {qEn:"What are the career prospects?",
+   qZh:"畢業後的出路好嗎？",
+   aEn:"Strong. Demand for people who understand both EDA and AI keeps growing as the semiconductor industry expands. Our graduates go to major EDA vendors, chip design houses and semiconductor manufacturers — and the research training transfers well to software and hardware roles in other fields.",
+   aZh:"相當廣闊且有前景。隨著半導體產業蓬勃發展，對 EDA 與 AI 人才的需求與日俱增，實驗室畢業生不僅有機會加入國際知名 EDA 公司，也是晶片設計與半導體製造公司網羅的對象。此外，紮實的研究訓練同樣有助於其他領域的軟硬體設計工作。"},
+  {qEn:"How do I apply?",
+   qZh:"如何加入實驗室？",
+   aEn:"Our graduate students come primarily through the Institute of Pioneer Semiconductor Innovation and the Institute of Electronics. Once you have received your admission notice, get in touch with Prof. Lin.",
+   aZh:"實驗室招收的研究生主要來自前瞻半導體研究所與電子研究所，請同學於收到錄取通知後與老師聯繫。"},
+  {qEn:"Where is the lab?",
+   qZh:"實驗室在哪裡？",
+   aEn:"Engineering Building 6, Room 457. Prof. Lin's office is EF369. Visitors welcome.",
+   aZh:"工程六館 457 室，老師辦公室在 EF369。歡迎來看看。"}
+];
+
+const NAV = [
+  ["home",     "Home",         "首頁"],
+  ["research", "Research",     "研究方向"],
+  ["pub",      "Publications", "論文著作"],
+  ["people",   "People",       "成員"],
+  ["awards",   "Awards",       "獲獎"],
+  ["join",     "Join Us",      "加入實驗室"],
+  ["contact",  "Contact",      "聯絡"]
+];
+
+const nav = document.getElementById("nav");
+NAV.forEach(function(item){
+  const b = document.createElement("button");
+  b.dataset.go = item[0];
+  b.innerHTML = '<span class="l-en">' + item[1] + '</span><span class="l-zh">' + item[2] + '</span>';
+  b.addEventListener("click", function(){ show(item[0]); });
+  nav.appendChild(b);
+});
+
+function show(id){
+  document.querySelectorAll(".view").forEach(function(v){
+    v.classList.toggle("on", v.id === "v-" + id);
+  });
+  nav.querySelectorAll("button").forEach(function(b){
+    b.setAttribute("aria-current", String(b.dataset.go === id));
+  });
+  window.scrollTo(0, 0);
+}
+
+function setLang(l){
+  document.documentElement.setAttribute("data-lang", l);
+  document.documentElement.lang = (l === "zh") ? "zh-Hant" : "en";
+  document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
+  document.getElementById("btn-zh").setAttribute("aria-pressed", String(l === "zh"));
+}
+document.getElementById("btn-en").addEventListener("click", function(){ setLang("en"); });
+document.getElementById("btn-zh").addEventListener("click", function(){ setLang("zh"); });
+
+/* publications */
+const GROUPS = [
+  ["top",      "Top conference papers", "頂尖會議論文", "DAC &amp; ICCAD"],
+  ["journal",  "Journal papers",        "期刊論文",     ""],
+  ["regular",  "Conference papers",     "會議論文",     ""],
+  ["preprint", "Preprints",             "預印本",       ""]
+];
+
+function authorLine(list){
+  return list.map(function(a){
+    return a === "Mark Po-Hung Lin" ? "<b>" + a + "</b>" : a;
+  }).join(", ");
+}
+
+const box = document.getElementById("pubs");
+GROUPS.forEach(function(g){
+  const rows = PUBS.filter(function(p){ return p.tier === g[0]; });
+  if (!rows.length) return;
+
+  const sec = document.createElement("section");
+  sec.className = "pubset";
+  sec.innerHTML = '<h3><span class="l-en">' + g[1] + '</span><span class="l-zh">' + g[2] + '</span> ' +
+    '<span class="ct">' + rows.length + (g[3] ? ' &nbsp;&middot;&nbsp; ' + g[3] : '') + '</span></h3>';
+
+  rows.forEach(function(p){
+    const d = document.createElement("div");
+    d.className = "pub";
+    const tail = [p.volume ? "vol. " + p.volume : "", p.pages ? "pp. " + p.pages : ""]
+      .filter(Boolean).join(", ");
+    const title = p.url
+      ? '<a href="' + p.url + '" target="_blank" rel="noopener">' + p.title + '</a>'
+      : p.title;
+    d.innerHTML =
+      '<p class="t">' + title + '</p>' +
+      '<p class="a">' + authorLine(p.authors) + '</p>' +
+      '<p class="m"><span class="v' + (g[0] === "top" ? " hi" : "") + '">' +
+      (p.venueFull || p.venue) + '</span>, ' + p.year + (tail ? ", " + tail : "") + '</p>';
+    sec.appendChild(d);
+  });
+  box.appendChild(sec);
+});
+
+document.getElementById("pats").innerHTML = PATENTS.map(function(p){
+  return '<li>' + p.inventors.replace("P.-H. Lin", "<b>P.-H. Lin</b>") +
+    ', &ldquo;' + p.title + ',&rdquo; U.S. Patent No. ' + p.no + ', ' + p.date + '.</li>';
+}).join("");
+
+document.getElementById("awards").innerHTML = AWARDS.map(function(a){
+  return '<div class="award"><div class="y">' + a.year + '</div><div class="d">' +
+    '<span class="l-en">' + a.en + '</span><span class="l-zh">' + a.zh + '</span></div></div>';
+}).join("");
+
+document.getElementById("faq").innerHTML = FAQ.map(function(f){
+  return '<details><summary><span class="l-en">' + f.qEn + '</span>' +
+    '<span class="l-zh">' + f.qZh + '</span></summary>' +
+    '<div class="ans"><span class="l-en">' + f.aEn + '</span>' +
+    '<span class="l-zh">' + f.aZh + '</span></div></details>';
+}).join("");
+
+document.getElementById("roster").innerHTML = Array.from({length: 8}, function(){
+  return '<div class="slot"><div class="ph2"></div><div class="nm">&mdash;</div></div>';
+}).join("");
+
+show("home");
+setLang("en");
+</script>

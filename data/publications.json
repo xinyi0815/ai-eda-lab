@@ -1,0 +1,1232 @@
+{
+  "_comment": "Auto-generated from DBLP. Do not hand-edit; regenerate at build time.",
+  "source": "dblp",
+  "dblpPid": "71/7353",
+  "dblpUrl": "https://dblp.org/pid/71/7353.html",
+  "fetchedAt": "2026-09-01",
+  "topVenues": [
+    "DAC",
+    "ICCAD"
+  ],
+  "count": 66,
+  "items": [
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "DATE",
+      "venueFull": "DATE",
+      "year": 2026,
+      "title": "Optimizing Multibit Flip-Flop Banking via Agile In-Placement PPA Co-Optimization",
+      "authors": [
+        "Huan-Yuan Chen",
+        "Yu-Ruei Lin",
+        "Mark Po-Hung Lin",
+        "Hung-Ming Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-3",
+      "url": "https://doi.org/10.23919/DATE69613.2026.11539424"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "MLCAD",
+      "venueFull": "MLCAD",
+      "year": 2025,
+      "title": "Netlistify: Transforming Circuit Schematics into Netlists with Deep Learning",
+      "authors": [
+        "Chun-Yen Huang",
+        "Hsuan-I Chen",
+        "Hao-Wen Ho",
+        "Pei-Hsin Kang",
+        "Mark Po-Hung Lin",
+        "Wen-Hao Liu",
+        "Haoxing Ren"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-8",
+      "url": "https://doi.org/10.1109/MLCAD65511.2025.11189145"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2024,
+      "title": "Voronoi Diagram-based Multiple Power Plane Generation on Redistribution Layers in 3D ICs",
+      "authors": [
+        "Chia-Wei Lin",
+        "Jing-Yao Weng",
+        "I-Te Lin",
+        "Ho-Chieh Hsu",
+        "Chia-Ming Liu",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "19:1-19:6",
+      "url": "https://doi.org/10.1145/3649329.3657315"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans Autom. Sci. Eng.",
+      "venueFull": "IEEE TASE",
+      "year": 2024,
+      "title": "SSIOE: Self-Supervised Indoor Occupancy Estimation for Intelligent Building Management",
+      "authors": [
+        "Sin-Han Huang",
+        "Tzu-Yin Chao",
+        "Beatrice Adelaide Wibisono",
+        "Mark Po-Hung Lin",
+        "Ching-Chun Huang"
+      ],
+      "volume": "21",
+      "number": "3",
+      "pages": "3025-3038",
+      "url": "https://doi.org/10.1109/TASE.2023.3273151"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ISPD",
+      "venueFull": "ISPD",
+      "year": 2024,
+      "title": "Reinforcement Learning or Simulated Annealing for Analog Placement? A Study based on Bounded-Sliceline Grids",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Chou-Chen Lee",
+        "Yi-Chao Hsieh"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "143-150",
+      "url": "https://doi.org/10.1145/3626184.3635281"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ASP-DAC",
+      "venueFull": "ASP-DAC",
+      "year": 2023,
+      "title": "On Automating Finger-Cap Array Synthesis with Optimal Parasitic Matching for Custom SAR ADC",
+      "authors": [
+        "Cheng-Yu Chiang",
+        "Chia-Lin Hu",
+        "Mark Po-Hung Lin",
+        "Yu-Szu Chung",
+        "Shyh-Jye Jou",
+        "Jieh-Tsorng Wu",
+        "Shiuh-Hua Wood Chiang",
+        "Chien-Nan Jimmy Liu",
+        "Hung-Ming Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "352-357",
+      "url": "https://doi.org/10.1145/3566097.3567878"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2023,
+      "title": "Late Breaking Results: PVT-Sensitive Delay Fitting for High-Performance Computing",
+      "authors": [
+        "Ding-Hao Wang",
+        "Shuo-Hung Hsu",
+        "Shu-Hsiang Yang",
+        "Pei-Ju Lin",
+        "Hui-Ting Yang",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-2",
+      "url": "https://doi.org/10.1109/DAC56929.2023.10247900"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2023,
+      "title": "On Reducing LDE Variations in Modern Analog Placement",
+      "authors": [
+        "A. K. Thasreefa",
+        "Abhishek Patyal",
+        "Hao-Yu Chi",
+        "Mark Po-Hung Lin",
+        "Hung-Ming Chen"
+      ],
+      "volume": "42",
+      "number": "4",
+      "pages": "1268-1279",
+      "url": "https://doi.org/10.1109/TCAD.2022.3199307"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2023,
+      "title": "Pole-Aware Analog Layout Synthesis Considering Monotonic Current Flows and Wire Crossings",
+      "authors": [
+        "Abhishek Patyal",
+        "Hung-Ming Chen",
+        "Mark Po-Hung Lin",
+        "Guan-Qi Fang",
+        "Simon Yi-Hung Chen"
+      ],
+      "volume": "42",
+      "number": "1",
+      "pages": "266-279",
+      "url": "https://doi.org/10.1109/TCAD.2022.3174166"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "SMACD",
+      "venueFull": "SMACD",
+      "year": 2023,
+      "title": "Layout Synthesis of Analog Primitive Cells with Variational Autoencoder",
+      "authors": [
+        "Po-Chun Wang",
+        "Mark Po-Hung Lin",
+        "Chien-Nan Jimmy Liu",
+        "Hung-Ming Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-4",
+      "url": "https://doi.org/10.1109/SMACD58065.2023.10192172"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ASP-DAC",
+      "venueFull": "ASP-DAC",
+      "year": 2022,
+      "title": "Common-Centroid Layout for Active and Passive Devices: A Review and the Road Ahead",
+      "authors": [
+        "Nibedita Karmokar",
+        "Meghna Madhusudan",
+        "Arvind K. Sharma",
+        "Ramesh Harjani",
+        "Mark Po-Hung Lin",
+        "Sachin S. Sapatnekar"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "114-121",
+      "url": "https://doi.org/10.1109/ASP-DAC52403.2022.9712576"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "MLCAD",
+      "venueFull": "MLCAD",
+      "year": 2022,
+      "title": "Automatic Analog Schematic Diagram Generation based on Building Block Classification and Reinforcement Learning",
+      "authors": [
+        "Hung-Yun Hsu",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "43-48",
+      "url": "https://doi.org/10.1145/3551901.3556486"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "SMACD",
+      "venueFull": "SMACD",
+      "year": 2022,
+      "title": "On Optimizing Capacitor Array Design for Advanced Node SAR ADC",
+      "authors": [
+        "Cheng-Yu Chiang",
+        "Chia-Lin Hu",
+        "Kang-Yu Chang",
+        "Mark Po-Hung Lin",
+        "Shyh-Jye Jou",
+        "Hung-Yu Chen",
+        "Chien-Nan Jimmy Liu",
+        "Hung-Ming Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-4",
+      "url": "https://doi.org/10.1109/SMACD55068.2022.9816200"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ASP-DAC",
+      "venueFull": "ASP-DAC",
+      "year": 2021,
+      "title": "A Novel Technology Mapper for Complex Universal Gates",
+      "authors": [
+        "Meng-Che Wu",
+        "Ai Quoc Dao",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "475-480",
+      "url": "https://doi.org/10.1145/3394885.3431561"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2021,
+      "title": "A Novel Machine-Learning based SoC Performance Monitoring Methodology under Wide-Range PVT Variations with Unknown Critical Paths",
+      "authors": [
+        "Ding-Hao Wang",
+        "Pei-Ju Lin",
+        "Hui-Ting Yang",
+        "Ching-An Hsu",
+        "Sin-Han Huang",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1370-1371",
+      "url": "https://doi.org/10.1109/DAC18074.2021.9586155"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "MLCAD",
+      "venueFull": "MLCAD",
+      "year": 2021,
+      "title": "Massive Figure Extraction and Classification in Electronic Component Datasheets for Accelerating PCB Design Preparation",
+      "authors": [
+        "Kuan-Chun Chen",
+        "Chou-Chen Lee",
+        "Mark Po-Hung Lin",
+        "Yan-Jhih Wang",
+        "Yi-Ting Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-6",
+      "url": "https://doi.org/10.1109/MLCAD52597.2021.9531275"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2020,
+      "title": "Late Breaking Results: Automatic Adaptive MOM Capacitor Cell Generation for Analog and Mixed-Signal Layout Design",
+      "authors": [
+        "Tzu-Wei Wang",
+        "Po-Chang Wu",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-2",
+      "url": "https://doi.org/10.1109/DAC18072.2020.9218609"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2020,
+      "title": "Late Breaking Results: Pole-aware Analog Placement Considering Monotonic Current Flow and Crossing-Wire Minimization",
+      "authors": [
+        "Abhishek Patyal",
+        "Hung-Ming Chen",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-2",
+      "url": "https://doi.org/10.1109/DAC18072.2020.9218634"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2020,
+      "title": "Achieving Analog Layout Integrity through Learning and Migration Invited Talk",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Hao-Yu Chi",
+        "Abhishek Patyal",
+        "Zheng-Yao Liu",
+        "Jun-Jie Zhao",
+        "Chien-Nan Jimmy Liu",
+        "Hung-Ming Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "55:1-55:8",
+      "url": "https://doi.org/10.1145/3400302.3415752"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2020,
+      "title": "Overview of 2020 CAD Contest at ICCAD",
+      "authors": [
+        "Ing-Chao Lin",
+        "Ulf Schlichtmann",
+        "Tsung-Wei Huang",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "67:1-67:3",
+      "url": "https://doi.org/10.1145/3400302.3415741"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2020,
+      "title": "Corner-Stitching-Based Multilayer Obstacle-Avoiding Component-to-Component Rectilinear Minimum Spanning Tree Construction",
+      "authors": [
+        "Yen-Yu Su",
+        "Shuo-Hui Wang",
+        "Wei-Liang Wu",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": "39",
+      "number": "3",
+      "pages": "675-685",
+      "url": "https://doi.org/10.1109/TCAD.2018.2890531"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "DATE",
+      "venueFull": "DATE",
+      "year": 2019,
+      "title": "IR-aware Power Net Routing for Multi-Voltage Mixed-Signal Design",
+      "authors": [
+        "Shuo-Hui Wang",
+        "Guan-Hong Liou",
+        "Yen-Yu Su",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "72-77",
+      "url": "https://doi.org/10.23919/DATE.2019.8715166"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2019,
+      "title": "Overview of 2019 CAD Contest at ICCAD",
+      "authors": [
+        "Ulf Schlichtmann",
+        "Sabya Das",
+        "Ing-Chao Lin",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-2",
+      "url": "https://doi.org/10.1109/ICCAD45719.2019.8942133"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2018,
+      "title": "Efficient computation of ECO patch functions",
+      "authors": [
+        "Ai Quoc Dao",
+        "Nian-Ze Lee",
+        "Li-Cheng Chen",
+        "Mark Po-Hung Lin",
+        "Jie-Hong R. Jiang",
+        "Alan Mishchenko",
+        "Robert K. Brayton"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "51:1-51:6",
+      "url": "https://doi.org/10.1145/3195970.3196039"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2018,
+      "title": "SAT-Based Fault Equivalence Checking in Functional Safety Verification",
+      "authors": [
+        "Ai Quoc Dao",
+        "Mark Po-Hung Lin",
+        "Alan Mishchenko"
+      ],
+      "volume": "37",
+      "number": "12",
+      "pages": "3198-3205",
+      "url": "https://doi.org/10.1109/TCAD.2018.2791465"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "SMACD",
+      "venueFull": "SMACD",
+      "year": 2018,
+      "title": "Classifying Analog and Digital Circuits with Machine Learning Techniques Toward Mixed-Signal Design Automation",
+      "authors": [
+        "Guan-Hong Liou",
+        "Shuo-Hui Wang",
+        "Yan-Yu Su",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "173-176",
+      "url": "https://doi.org/10.1109/SMACD.2018.8434884"
+    },
+    {
+      "type": "preprint",
+      "tier": "preprint",
+      "venue": "CoRR",
+      "venueFull": "CoRR",
+      "year": 2017,
+      "title": "Novel CMOS RFIC Layout Generation with Concurrent Device Placement and Fixed-Length Microstrip Routing",
+      "authors": [
+        "Tsun-Ming Tseng",
+        "Bing Li 0005",
+        "Ching-Feng Yeh",
+        "Hsiang-Chieh Jhan",
+        "Zuo-Min Tsai",
+        "Mark Po-Hung Lin",
+        "Ulf Schlichtmann"
+      ],
+      "volume": "abs/1705.04991",
+      "number": null,
+      "pages": null,
+      "url": null
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "DATE",
+      "venueFull": "DATE",
+      "year": 2017,
+      "title": "High-density MOM capacitor array with novel mortise-tenon structure for low-power SAR ADC",
+      "authors": [
+        "Nai-Chen Chen",
+        "Pang-Yen Chou",
+        "Helmut E. Graeb",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1757-1762",
+      "url": "https://doi.org/10.23919/DATE.2017.7927277"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2017,
+      "title": "State retention for power gated design with non-uniform multi-bit retention latches",
+      "authors": [
+        "Guo-Gin Fan",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "607-614",
+      "url": "https://doi.org/10.1109/ICCAD.2017.8203833"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2017,
+      "title": "An Efficient Two-Phase ILP-Based Algorithm for Precise CMOS RFIC Layout Generation",
+      "authors": [
+        "Tsun-Ming Tseng",
+        "Bing Li 0005",
+        "Ching-Feng Yeh",
+        "Hsiang-Chieh Jhan",
+        "Zuo-Min Tsai",
+        "Mark Po-Hung Lin",
+        "Ulf Schlichtmann"
+      ],
+      "volume": "36",
+      "number": "8",
+      "pages": "1313-1326",
+      "url": "https://doi.org/10.1109/TCAD.2016.2629445"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2017,
+      "title": "Parasitic-Aware Common-Centroid Binary-Weighted Capacitor Layout Generation Integrating Placement, Routing, and Unit Capacitor Sizing",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Vincent Wei-Hao Hsiao",
+        "Chun-Yu Lin",
+        "Nai-Chen Chen"
+      ],
+      "volume": "36",
+      "number": "8",
+      "pages": "1274-1286",
+      "url": "https://doi.org/10.1109/TCAD.2017.2685598"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Very Large Scale Integr. Syst.",
+      "venueFull": "IEEE TVLSI",
+      "year": 2017,
+      "title": "Matched-Routing Common-Centroid 3-D MOM Capacitors for Low-Power Data Converters",
+      "authors": [
+        "Pang-Yen Chou",
+        "Nai-Chen Chen",
+        "Mark Po-Hung Lin",
+        "Helmut Graeb"
+      ],
+      "volume": "25",
+      "number": "8",
+      "pages": "2234-2247",
+      "url": "https://doi.org/10.1109/TVLSI.2017.2687980"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ISVLSI",
+      "venueFull": "ISVLSI",
+      "year": 2017,
+      "title": "AIsim: Functional Simulator for Analog-to-Information Perceptual Systems",
+      "authors": [
+        "Hong Liu",
+        "Zheyu Liu",
+        "Fei Qiao",
+        "Mark Po-Hung Lin",
+        "Qi Wei 0001",
+        "Huazhong Yang"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "507-512",
+      "url": "https://doi.org/10.1109/ISVLSI.2017.94"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "Integr.",
+      "venueFull": "Integration, the VLSI Journal",
+      "year": 2017,
+      "title": "Minimizing detection-to-boosting latency toward low-power error-resilient circuits",
+      "authors": [
+        "Chih-Cheng Hsu",
+        "Masanori Hashimoto",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": "58",
+      "number": null,
+      "pages": "236-244",
+      "url": "https://doi.org/10.1016/j.vlsi.2017.01.002"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "ACM Trans. Design Autom. Electr. Syst.",
+      "venueFull": "ACM TODAES",
+      "year": 2016,
+      "title": "Parasitic-Aware Common-Centroid FinFET Placement and Routing for Current-Ratio Matching",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Xin Li 0001",
+        "Tsung-Yi Ho"
+      ],
+      "volume": "21",
+      "number": "3",
+      "pages": "39:1-39:22",
+      "url": "https://doi.org/10.1145/2856031"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ASP-DAC",
+      "venueFull": "ASP-DAC",
+      "year": 2016,
+      "title": "Recent research development and new challenges in analog layout synthesis",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Yao-Wen Chang",
+        "Chih-Ming Hung"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "617-622",
+      "url": "https://doi.org/10.1109/ASPDAC.2016.7428080"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2016,
+      "title": "Novel CMOS RFIC layout generation with concurrent device placement and fixed-length microstrip routing",
+      "authors": [
+        "Tsun-Ming Tseng",
+        "Bing Li 0005",
+        "Ching-Feng Yeh",
+        "Hsiang-Chieh Jhan",
+        "Zuo-Min Tsai",
+        "Mark Po-Hung Lin",
+        "Ulf Schlichtmann"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "101:1-101:6",
+      "url": "https://doi.org/10.1145/2897937.2898052"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2016,
+      "title": "DeMixGen: Deterministic Mixed-Signal Layout Generation With Separated Analog and Digital Signal Paths",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Po-Hsun Chang",
+        "Shuenn-Yuh Lee",
+        "Helmut E. Graeb"
+      ],
+      "volume": "35",
+      "number": "8",
+      "pages": "1229-1242",
+      "url": "https://doi.org/10.1109/TCAD.2015.2501295"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "SLIP",
+      "venueFull": "SLIP",
+      "year": 2016,
+      "title": "Latch Clustering for Minimizing Detection-to-Boosting Latency Toward Low-Power Resilient Circuits",
+      "authors": [
+        "Chih-Cheng Hsu",
+        "Mark Po-Hung Lin",
+        "Masanori Hashimoto"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "2:1-2:6",
+      "url": "https://doi.org/10.1145/2947357.2947364"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ECCTD",
+      "venueFull": "ECCTD",
+      "year": 2015,
+      "title": "Analog layout synthesis with knowledge mining",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Tsung-Yi Ho"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-4",
+      "url": "https://doi.org/10.1109/ECCTD.2015.7300111"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2015,
+      "title": "A Novel Analog Physical Synthesis Methodology Integrating Existent Design Expertise",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Tung-Chieh Chen",
+        "Ching-Feng Yeh",
+        "Xin Li 0001",
+        "Tsung-Yi Ho"
+      ],
+      "volume": "34",
+      "number": "2",
+      "pages": "199-212",
+      "url": "https://doi.org/10.1109/TCAD.2014.2379630"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2015,
+      "title": "Clock-Tree Aware Multibit Flip-Flop Generation During Placement for Power Optimization",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Chih-Cheng Hsu",
+        "Yu-Chuan Chen"
+      ],
+      "volume": "34",
+      "number": "2",
+      "pages": "280-292",
+      "url": "https://doi.org/10.1109/TCAD.2014.2376988"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ISPD",
+      "venueFull": "ISPD",
+      "year": 2015,
+      "title": "Common-Centroid FinFET Placement Considering the Impact of Gate Misalignment",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Xin Li 0001",
+        "Tsung-Yi Ho"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "25-31",
+      "url": "https://doi.org/10.1145/2717764.2717769"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "Integr.",
+      "venueFull": "Integration, the VLSI Journal",
+      "year": 2015,
+      "title": "Crosstalk-aware multi-bit flip-flop generation for power optimization",
+      "authors": [
+        "Chih-Cheng Hsu",
+        "Mark Po-Hung Lin",
+        "Yao-Tsung Chang"
+      ],
+      "volume": "48",
+      "number": null,
+      "pages": "146-157",
+      "url": "https://doi.org/10.1016/j.vlsi.2014.08.002"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "VLSI-DAT",
+      "venueFull": "VLSI-DAT",
+      "year": 2015,
+      "title": "Low-power gated clock tree optimization for three-dimensional integrated circuits",
+      "authors": [
+        "Yu-Chuan Chen",
+        "Chih-Cheng Hsu",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-4",
+      "url": "https://doi.org/10.1109/VLSI-DAT.2015.7114530"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2014,
+      "title": "Parasitic-aware Sizing and Detailed Routing for Binary-weighted Capacitors in Charge-scaling DAC",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Vincent Wei-Hao Hsiao",
+        "Chun-Yu Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "165:1-165:6",
+      "url": "https://doi.org/10.1145/2593069.2593179"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2014,
+      "title": "More effective power-gated circuit optimization with multi-bit retention registers",
+      "authors": [
+        "Shu-Hung Lin",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "213-217",
+      "url": "https://doi.org/10.1109/ICCAD.2014.7001354"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2014,
+      "title": "Exploring Feasibilities of Symmetry Islands and Monotonic Current Paths in Slicing Trees for Analog Placement",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Tung-Chieh Chen",
+        "Ching-Feng Yeh",
+        "Tsung-Yi Ho",
+        "Bin-Da Liu"
+      ],
+      "volume": "33",
+      "number": "6",
+      "pages": "879-892",
+      "url": "https://doi.org/10.1109/TCAD.2014.2305831"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ISPD",
+      "venueFull": "ISPD",
+      "year": 2014,
+      "title": "Power optimization for clock network with clock gate cloning and flip-flop merging",
+      "authors": [
+        "Shih-Chuan Lo",
+        "Chih-Cheng Hsu",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "77-84",
+      "url": "https://doi.org/10.1145/2560519.2560520"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ECCTD",
+      "venueFull": "ECCTD",
+      "year": 2013,
+      "title": "Lithography-aware 1-dimensional cell generation",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Tung-Chieh Chen",
+        "Tsung-Yi Ho",
+        "Yu-Chuan Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "1-4",
+      "url": "https://doi.org/10.1109/ECCTD.2013.6662310"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2013,
+      "title": "In-placement clock-tree aware multi-bit flip-flop generation for power optimization",
+      "authors": [
+        "Chih-Cheng Hsu",
+        "Yu-Chuan Chen",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "592-598",
+      "url": "https://doi.org/10.1109/ICCAD.2013.6691177"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2013,
+      "title": "1-D Cell Generation With Printability Enhancement",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Tung-Chieh Chen",
+        "Tsung-Yi Ho",
+        "Yu-Chuan Chen",
+        "Shun-Ren Siao",
+        "Shu-Hung Lin"
+      ],
+      "volume": "32",
+      "number": "3",
+      "pages": "419-432",
+      "url": "https://doi.org/10.1109/TCAD.2012.2226454"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2013,
+      "title": "Common-Centroid Capacitor Layout Generation Considering Device Matching and Parasitic Minimization",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Yi-Ting He",
+        "Vincent Wei-Hao Hsiao",
+        "Rong-Guey Chang",
+        "Shuenn-Yuh Lee"
+      ],
+      "volume": "32",
+      "number": "7",
+      "pages": "991-1002",
+      "url": "https://doi.org/10.1109/TCAD.2012.2226457"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ASP-DAC",
+      "venueFull": "ASP-DAC",
+      "year": 2012,
+      "title": "Crosstalk-aware power optimization with multi-bit flip-flops",
+      "authors": [
+        "Chih-Cheng Hsu",
+        "Yao-Tsung Chang",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "431-436",
+      "url": "https://doi.org/10.1109/ASPDAC.2012.6164987"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2012,
+      "title": "Performance-driven analog placement considering monotonic current paths",
+      "authors": [
+        "Po-Hsun Wu",
+        "Mark Po-Hung Lin",
+        "Yang-Ru Chen",
+        "Bing-Shiun Chou",
+        "Tung-Chieh Chen",
+        "Tsung-Yi Ho",
+        "Bin-Da Liu"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "613-619",
+      "url": "https://doi.org/10.1145/2429384.2429516"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "ECCTD",
+      "venueFull": "ECCTD",
+      "year": 2011,
+      "title": "Recent research in analog placement considering thermal gradient",
+      "authors": [
+        "Mark Po-Hung Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "349-352",
+      "url": "https://doi.org/10.1109/ECCTD.2011.6043358"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2011,
+      "title": "A corner stitching compliant B∗-tree representation and its applications to analog placement",
+      "authors": [
+        "Hui-Fang Tsao",
+        "Pang-Yen Chou",
+        "Shih-Lun Huang",
+        "Yao-Wen Chang",
+        "Mark Po-Hung Lin",
+        "Duan-Ping Chen",
+        "Dick Liu"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "507-511",
+      "url": "https://doi.org/10.1109/ICCAD.2011.6105377"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2011,
+      "title": "Post-Placement Power Optimization With Multi-Bit Flip-Flops",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Chih-Cheng Hsu",
+        "Yao-Tsung Chang"
+      ],
+      "volume": "30",
+      "number": "12",
+      "pages": "1870-1882",
+      "url": "https://doi.org/10.1109/TCAD.2011.2165716"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2011,
+      "title": "Thermal-Driven Analog Placement Considering Device Matching",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Hongbo Zhang 0001",
+        "Martin D. F. Wong",
+        "Yao-Wen Chang"
+      ],
+      "volume": "30",
+      "number": "3",
+      "pages": "325-336",
+      "url": "https://doi.org/10.1109/TCAD.2010.2097308"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "Microelectron. J.",
+      "venueFull": "Microelectronics Journal",
+      "year": 2011,
+      "title": "Automated synthesis of discrete-time sigma-delta modulators from system architecture to circuit netlist",
+      "authors": [
+        "Shuenn-Yuh Lee",
+        "Chih-Yuan Chen",
+        "Jia-Hua Hong",
+        "Rong-Guey Chang",
+        "Mark Po-Hung Lin"
+      ],
+      "volume": "42",
+      "number": "2",
+      "pages": "347-357",
+      "url": "https://doi.org/10.1016/j.mejo.2010.11.004"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "ICCAD",
+      "venueFull": "ICCAD",
+      "year": 2010,
+      "title": "Post-placement power optimization with multi-bit flip-flops",
+      "authors": [
+        "Yao-Tsung Chang",
+        "Chih-Cheng Hsu",
+        "Mark Po-Hung Lin",
+        "Yu-Wen Tsai",
+        "Sheng-Fong Chen"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "218-223",
+      "url": "https://doi.org/10.1109/ICCAD.2010.5654155"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2009,
+      "title": "Thermal-driven analog placement considering device matching",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Hongbo Zhang 0001",
+        "Martin D. F. Wong",
+        "Yao-Wen Chang"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "593-598",
+      "url": "https://doi.org/10.1145/1629911.1630064"
+    },
+    {
+      "type": "conference",
+      "tier": "regular",
+      "venue": "DATE",
+      "venueFull": "DATE",
+      "year": 2009,
+      "title": "Analog layout synthesis - Recent advances in topological approaches",
+      "authors": [
+        "Helmut Gräb",
+        "Florin Balasa",
+        "Rafael Castro-López",
+        "Yu-Wei Chang 0002",
+        "Francisco V. Fernández 0001",
+        "Mark Po-Hung Lin",
+        "Martin Strasser"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "274-279",
+      "url": "http://dl.acm.org/citation.cfm?id=1874684"
+    },
+    {
+      "type": "journal",
+      "tier": "journal",
+      "venue": "IEEE Trans. Comput. Aided Des. Integr. Circuits Syst.",
+      "venueFull": "IEEE TCAD",
+      "year": 2009,
+      "title": "Analog Placement Based on Symmetry-Island Formulation",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Yao-Wen Chang",
+        "Shyh-Chang Lin"
+      ],
+      "volume": "28",
+      "number": "6",
+      "pages": "791-804",
+      "url": "https://doi.org/10.1109/TCAD.2009.2017433"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2008,
+      "title": "Analog placement based on hierarchical module clustering",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Shyh-Chang Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "50-55",
+      "url": "https://doi.org/10.1145/1391469.1391484"
+    },
+    {
+      "type": "conference",
+      "tier": "top",
+      "venue": "DAC",
+      "venueFull": "DAC",
+      "year": 2007,
+      "title": "Analog Placement Based on Novel Symmetry-Island Formulation",
+      "authors": [
+        "Mark Po-Hung Lin",
+        "Shyh-Chang Lin"
+      ],
+      "volume": null,
+      "number": null,
+      "pages": "465-470",
+      "url": "https://doi.org/10.1145/1278480.1278601"
+    }
+  ]
+}
