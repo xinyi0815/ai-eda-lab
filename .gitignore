@@ -2,3 +2,11 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# local reference material — never publish
+參考資料/
+*.pptx
+*.pdf
+
+# generated preview build (image inlined) — not part of the site
+dist-preview.html

@@ -2,6 +2,25 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-01 — third design pass
+
+Second pass corrected the first one's density but overshot into emptiness — the page
+read as a document rather than a site, with no imagery, no footer and no contrast
+between sections. Added substance without returning to the earlier visual noise.
+
+- Full-bleed hero on a tinted ground with a generated routing/floorplan backdrop
+  drawn on canvas (seeded, so it is stable across loads) and masked away from the text
+- Sections alternate between plain and tinted full-bleed bands to give the page rhythm
+- Added a dark footer with contact details, section links and outbound links — the
+  page previously just stopped
+- New chart on the publications page: papers per year, 2007–2026, stacked as
+  DAC/ICCAD vs everything else, with legend, hover tooltip, keyboard focus and a
+  table view. Palette checked with the data-viz validator: CVD ΔE 18.3, both steps
+  clear 3:1 against their surface in light and dark
+- Added a lab wordmark (inline SVG die-with-pins) in the header and footer
+- Photo placeholders now use a hatched frame so they read as intentional
+- Research headings carry an accent rule; key figures use the accent colour
+
 ## 2026-09-01 — second design pass
 
 Rebuilt the visual treatment after feedback that the first pass read as grainy,
