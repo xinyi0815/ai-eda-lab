@@ -19,6 +19,7 @@ fine for a review copy but is *not* what ships — see [Where this is going](#wh
 
 ```
 index.html              the entire site, one file
+assets/logo.jpg         the lab logo, recovered from a slide deck
 data/publications.json  66 publications, generated from DBLP
 robots.txt              blocks all crawlers while this is a draft
 .nojekyll               tells GitHub Pages not to run Jekyll on this repo
@@ -78,7 +79,9 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 - Alumni placements — where graduates went (this is the most persuasive thing a
   lab site can show a prospective student)
 - Prof. Lin's photo
-- Lab logo
+- **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
+  original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
+  deck, so it is raster and carries a baked-in background
 - **Confirmation of the five research descriptions**, which were drafted from the
   publication record and have not been reviewed by Prof. Lin
 
