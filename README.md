@@ -50,6 +50,20 @@ Structured content (patents, awards, FAQ) lives in JavaScript arrays at the bott
 of the file. To add an award, add one entry to `AWARDS`; the page rebuilds that
 list on load.
 
+## Attribution policy — what the lab page may claim
+
+The lab site lists **only work led by AI-EDA Lab** (NYCU era). Papers co-advised
+with other groups belong to those groups; Prof. Lin's pre-NYCU career belongs to
+his personal record. Both are linked, never listed, so the lab never appears to
+claim another group's output. The same rule governs awards: the Awards page keeps
+lab/student achievements (MLCAD 2025 Best Artifact, ICCAD 2024 contest prizes);
+the professor's personal honors stay on his profile page.
+
+Which papers count as lab-led is decided by `data/lab-publications.json` — an
+include list of exact titles. The first pass (2020+, no other faculty co-author,
+10 papers) was drafted by heuristic and **needs Prof. Lin's confirmation**; to
+add or remove a paper, edit that file and re-inject.
+
 ## Publications are generated, not typed
 
 `data/publications.json` comes from Prof. Lin's DBLP record:
@@ -82,6 +96,8 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
   original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
   deck, so it is raster and carries a baked-in background
+- **Confirmation of the lab-publication curation** in `data/lab-publications.json`
+- **Confirmation that the ICCAD 2024 contest teams were this lab's students**
 - **Confirmation of the five research descriptions**, which were drafted from the
   publication record and have not been reviewed by Prof. Lin
 

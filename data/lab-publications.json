@@ -1,0 +1,23 @@
+{
+  "_comment": [
+    "Curation of which publications belong on the LAB site.",
+    "Policy: the lab page lists only research led by AI-EDA Lab (NYCU era, 2020+).",
+    "Papers co-advised with other groups, and Prof. Lin's pre-NYCU work, live on his",
+    "personal page / DBLP instead, so the lab never claims another group's output.",
+    "First pass drafted 2026-09-02 by heuristic (2020+, no other faculty co-author).",
+    "PENDING PROF. LIN'S CONFIRMATION - edit the include list freely; titles must",
+    "match data/publications.json exactly."
+  ],
+  "include": [
+    "Netlistify: Transforming Circuit Schematics into Netlists with Deep Learning",
+    "Voronoi Diagram-based Multiple Power Plane Generation on Redistribution Layers in 3D ICs",
+    "Reinforcement Learning or Simulated Annealing for Analog Placement? A Study based on Bounded-Sliceline Grids",
+    "Late Breaking Results: PVT-Sensitive Delay Fitting for High-Performance Computing",
+    "Automatic Analog Schematic Diagram Generation based on Building Block Classification and Reinforcement Learning",
+    "A Novel Technology Mapper for Complex Universal Gates",
+    "A Novel Machine-Learning based SoC Performance Monitoring Methodology under Wide-Range PVT Variations with Unknown Critical Paths",
+    "Massive Figure Extraction and Classification in Electronic Component Datasheets for Accelerating PCB Design Preparation",
+    "Late Breaking Results: Automatic Adaptive MOM Capacitor Cell Generation for Analog and Mixed-Signal Layout Design",
+    "Corner-Stitching-Based Multilayer Obstacle-Avoiding Component-to-Component Rectilinear Minimum Spanning Tree Construction"
+  ]
+}

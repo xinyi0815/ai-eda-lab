@@ -2,6 +2,27 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-03 — attribution cleanup: lab vs. advisor
+
+The page was claiming Prof. Lin's entire career as the lab's own. Fixed on his
+student's direction:
+
+- Publications page now lists only the 10 papers curated as lab-led
+  (`data/lab-publications.json`, 2020+ with no other faculty co-author, pending
+  Prof. Lin's confirmation); co-advised work and the pre-NYCU record are linked
+  out to his profile and DBLP instead of listed
+- Awards page reduced to lab/student achievements (MLCAD 2025 Best Artifact,
+  ICCAD 2024 contest 2nd and 3rd); the professor's personal honors moved off the
+  lab page entirely
+- Career numbers (20 DAC/ICCAD, 15 TCAD, 9 patents) moved out of the lab's
+  opening claim and into the Advisor biography where they belong
+- News feed trimmed to five lab-led items (dropped the co-advised DATE 2026 paper
+  and the personal teaching award)
+- People page restored the Advisor / Ph.D. / M.S. / project-student / Alumni
+  structure with fillable person rows
+- Patents section keeps only the 2025 lab-era patent; the earlier eight are
+  linked, not listed
+
 ## 2026-09-02 — fourth design pass: the editorial hybrid
 
 Rebuilt from evidence instead of invention. A 21-agent survey read 16 real lab
