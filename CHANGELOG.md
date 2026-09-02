@@ -2,6 +2,35 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-02 — fourth design pass: the editorial hybrid
+
+Rebuilt from evidence instead of invention. A 21-agent survey read 16 real lab
+websites (NTU EDA, Yao-Wen Chang, MiuLab, VLLab, Media IC, Cornell Zhang, MIT
+HAN Lab, MIT EEMS, UCLA VAST, UCSD ABKGroup, ETH IIS, and six more discovered at
+NTU/NYCU and abroad), scoring each for "AI-template feel". The finding was
+unanimous: every site that reads as human is a dense editorial document — dated
+news feed, flat citation lists, numbers inside sentences, white ground, whitespace
+instead of section bands. Every site built from symmetric cards and tinted bands
+scored worst, matching exactly what was rejected in v3.
+
+- Homepage centerpiece is now a dated news feed (fixed crimson date column,
+  hairline rules), seeded with 7 real events from 2024–2026: DATE 2026 and DAC
+  2024 papers, the MLCAD 2025 Best Artifact Award, U.S. Patent 12,475,291,
+  ICCAD 2024 contest prizes
+- Key numbers moved into the opening sentences as prose with links; stat tiles,
+  the per-year chart, the canvas circuit backdrop, tinted bands, cards, chips and
+  accordions are all gone
+- Publications render as year-ordered flat citation lines with inline crimson
+  award annotations and [DOI] links
+- Advisor block uses the survey's one sanctioned asymmetric gesture: portrait
+  with a hard offset crimson shadow beside evidence-dense prose
+- FAQ is a plain Q&A document in the professor's voice
+- Footer gained human texture: bilingual address, map links, maintainer line, and
+  a "Last built" date stamp
+- Masthead is a plain non-sticky document header; nav is text links
+- Accents now have disjoint jobs: indigo for structure (headings, links), crimson
+  for time and honor (dates, awards, NEW badges, recruiting strip)
+
 ## 2026-09-01 — third design pass
 
 Second pass corrected the first one's density but overshot into emptiness — the page
