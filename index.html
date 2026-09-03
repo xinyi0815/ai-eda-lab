@@ -143,13 +143,11 @@ h3.year{font-size:16px; color:var(--ink-3); font-weight:600; margin:26px 0 2px;
 .spot h3{font-size:23px; margin:0 0 3px}
 .spot .role{font-size:14.5px; color:var(--ink-3); line-height:1.6; margin-bottom:14px}
 
-/* ── person rows ────────────────────────────────────────────────── */
-.person{display:grid; grid-template-columns:64px minmax(0,1fr); gap:20px; align-items:center;
-  max-width:70ch; padding:12px 0; border-top:1px solid var(--line)}
-.person .ph{width:64px; height:80px; background:var(--wash); border:1px solid var(--line)}
-.person .pt{font-size:15.5px; color:var(--ink-2); line-height:1.55}
-.person .pt b{color:var(--ink-3); font-weight:600}
-.person .pm{font-size:14px; color:var(--ink-3)}
+/* ── member rows (text only — no photos by lab policy) ──────────── */
+.mrow{max-width:70ch; padding:11px 0; border-bottom:1px solid var(--line);
+  font-size:15.5px; color:var(--ink-2); line-height:1.6}
+.mrow b{color:var(--ink); font-weight:600}
+.mrow .pm{font-size:14px; color:var(--ink-3)}
 
 /* ── q&a ────────────────────────────────────────────────────────── */
 .qa{max-width:72ch}
@@ -328,41 +326,49 @@ footer .base{margin-top:26px; padding-top:16px; border-top:1px solid var(--line)
   <p class="aside"><span class="l-en">Prof. Lin holds nine U.S. patents in total; the earlier eight predate the lab and are listed on <a href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener">his profile page</a>.</span><span class="l-zh">林老師共持有九件美國專利；其餘八件屬於實驗室成立前的成果，列於<a href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener">老師個人網頁</a>。</span></p>
 </div>
 
-<!-- ═══ PEOPLE ═══ -->
-<div class="view" id="v-people">
+<!-- ═══ ADVISOR (own page — the lab page's members live on v-members) ═══ -->
+<div class="view" id="v-advisor">
   <h2 class="sec"><span class="l-en">Advisor</span><span class="l-zh">指導教授</span></h2>
   <div class="spot">
     <div class="photo"><span class="l-en">Photo<br>to come</span><span class="l-zh">照片<br>待提供</span></div>
     <div>
       <h3>Mark Po-Hung Lin<span class="l-zh"> 林柏宏</span></h3>
-      <div class="role l-en">Professor · IPSI, Industry Academia Innovation School · Institute of Electronics · College of AI, NYCU</div>
+      <div class="role l-en">Professor, Institute of Pioneer Semiconductor Innovation, Industry Academia Innovation School; Institute of Electronics; College of Artificial Intelligence, NYCU</div>
       <div class="role l-zh">教授 · 產學創新研究學院 前瞻半導體研究所 · 電子研究所 · 人工智慧學院</div>
       <div class="prose">
-        <p class="l-en">Full biography, awards and academic service are on <a href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener">Prof. Lin's profile page</a>.</p>
-        <p class="l-zh">完整經歷、獲獎與學術服務請見<a href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener">老師的個人網頁</a>。</p>
+        <p class="l-en">Ph.D., National Taiwan University. Seven years at SpringSoft (2000–2007), where he co-initiated the Laker Analog Prototyping product with five patented technologies before the company's acquisition by Synopsys. His career record includes <b>20 papers at DAC and ICCAD</b>, <b>15 in IEEE TCAD</b> and <b>nine U.S. patents</b>. Humboldt Research Fellow at TU Munich, JSPS Fellow at Osaka University; past chair of the IEEE CEDA Taipei Chapter and ACM SIGDA Taiwan Chapter; TPC member of DAC, ICCAD, DATE, ASP-DAC and ISPD.</p>
+        <p class="l-zh">國立臺灣大學博士。曾任職思源科技七年（2000–2007），以五項專利技術共同發起 Laker Analog Prototyping 產品，該公司後由 Synopsys 併購。生涯紀錄包括 <b>DAC 與 ICCAD 論文 20 篇</b>、<b>IEEE TCAD 期刊論文 15 篇</b>與<b>九件美國專利</b>。曾為慕尼黑工業大學洪堡學者、大阪大學 JSPS 訪問學者；歷任 IEEE CEDA 台北分會與 ACM SIGDA 台灣分會主席，並擔任 DAC、ICCAD、DATE、ASP-DAC、ISPD 等會議技術委員。</p>
+        <p class="l-en">Office EF369 · mphlin [at] nycu.edu.tw · Full biography, personal honors, academic service and complete publication list: <a href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener">profile page</a> · <a href="https://dblp.org/pid/71/7353.html" target="_blank" rel="noopener">DBLP</a></p>
+        <p class="l-zh">辦公室 EF369 · mphlin [at] nycu.edu.tw · 完整經歷、個人獲獎、學術服務與完整著作列表：<a href="https://sites.google.com/view/mphlin/" target="_blank" rel="noopener">個人網頁</a> · <a href="https://dblp.org/pid/71/7353.html" target="_blank" rel="noopener">DBLP</a></p>
       </div>
     </div>
   </div>
+</div>
 
-  <h2 class="sec"><span class="l-en">Students</span><span class="l-zh">學生成員</span></h2>
+<!-- ═══ MEMBERS (students and alumni — the advisor has his own page) ═══ -->
+<div class="view" id="v-members">
+  <h2 class="sec"><span class="l-en">Members</span><span class="l-zh">實驗室成員</span></h2>
   <p class="aside"><span class="zhu l-en">Names being collected.</span><span class="zhu l-zh">名單整理中。</span>
-    <span class="l-en">Each member appears as one row: photo, name in Chinese and English, programme and entry year, research topic, personal link.</span>
-    <span class="l-zh">每位成員一列：照片、中英文姓名、學制與入學年、研究題目、個人連結。</span></p>
+    <span class="l-en">Each member appears as one line — name, programme and entry year, research topic, personal link. Member photos are intentionally not published.</span>
+    <span class="l-zh">每位成員一列：中英文姓名、學制與入學年、研究題目、個人連結。成員頁不刊登照片。</span></p>
 
   <h3 class="sub"><span class="l-en">Ph.D. students</span><span class="l-zh">博士班</span></h3>
-  <div class="person"><div class="ph"></div><div class="pt"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">Ph.D. student · entry year and research topic to come</span><span class="pm l-zh">博士生 · 入學年與研究題目待補</span></div></div>
+  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">Ph.D. student · entry year and research topic to come</span><span class="pm l-zh">博士生 · 入學年與研究題目待補</span></div>
 
   <h3 class="sub"><span class="l-en">M.S. students</span><span class="l-zh">碩士班</span></h3>
-  <div class="person"><div class="ph"></div><div class="pt"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div></div>
-  <div class="person"><div class="ph"></div><div class="pt"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div></div>
-  <div class="person"><div class="ph"></div><div class="pt"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div></div>
+  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div>
+  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div>
+  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div>
 
   <h3 class="sub"><span class="l-en">Undergraduate project students</span><span class="l-zh">專題生</span></h3>
-  <div class="person"><div class="ph"></div><div class="pt"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">Project student</span><span class="pm l-zh">專題生</span></div></div>
+  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">Project student</span><span class="pm l-zh">專題生</span></div>
 
   <h2 class="sec"><span class="l-en">Alumni</span><span class="l-zh">畢業生</span></h2>
-  <p class="aside"><span class="l-en">Graduates stay on this page permanently, one line each with year and placement — &ldquo;M.S. '25 → MediaTek&rdquo; — the way the strongest lab sites keep their whole history visible. List being collected.</span>
-    <span class="l-zh">畢業生將永久保留在此頁，每人一列，標註畢業年與去向 — 例如「碩士 '25 → 聯發科」— 如同最好的實驗室網站保留完整歷史。名單整理中。</span></p>
+  <p class="aside"><span class="l-en">Graduates stay on this page permanently — one entry each with degree and year, thesis topic, and where they went after graduation. List being collected; the row below shows the format.</span>
+    <span class="l-zh">畢業生將永久保留在此頁 — 每人一列，標註學位與畢業年、論文題目、畢業後去向。名單整理中；下方為格式示意。</span></p>
+  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><span class="pm"> · <span class="l-en">M.S., graduation year to come</span><span class="l-zh">碩士 · 畢業年待補</span></span><br>
+    <span class="pm l-en">Thesis: title to come · After graduation: placement to come</span>
+    <span class="pm l-zh">論文題目：待補 · 畢業去向：待補</span></div>
 </div>
 
 <!-- ═══ AWARDS ═══ -->
@@ -419,8 +425,8 @@ footer .base{margin-top:26px; padding-top:16px; border-top:1px solid var(--line)
     </div>
   </div>
   <div class="base">
-    <span class="l-en">&copy; 2026 AI-EDA Lab, NYCU · Site maintained by lab members · Last built September 2, 2026</span>
-    <span class="l-zh">&copy; 2026 國立陽明交通大學 AI-EDA 實驗室 · 網站由實驗室成員維護 · 最後建置 2026 年 9 月 2 日</span>
+    <span class="l-en">&copy; 2026 AI-EDA Lab, NYCU · Site maintained by lab members · Last built September 3, 2026</span>
+    <span class="l-zh">&copy; 2026 國立陽明交通大學 AI-EDA 實驗室 · 網站由實驗室成員維護 · 最後建置 2026 年 9 月 3 日</span>
   </div>
 </footer>
 
@@ -491,8 +497,8 @@ const FAQ = [
 ];
 
 const NAV = [
-  ["home","Home","首頁"], ["pub","Publications","論文著作"], ["people","People","成員"],
-  ["awards","Awards","獲獎"], ["join","Join Us","加入實驗室"], ["contact","Contact","聯絡"]
+  ["home","Home","首頁"], ["pub","Publications","論文著作"], ["advisor","Advisor","指導教授"],
+  ["members","Members","實驗室成員"], ["awards","Awards","獲獎"], ["join","Join Us","加入實驗室"], ["contact","Contact","聯絡"]
 ];
 
 /* navigation — plain text links, no chrome */

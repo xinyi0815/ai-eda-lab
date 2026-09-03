@@ -89,10 +89,17 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 ## What still needs supplying
 
-- Student roster — name, degree programme, entry year, research topic, photo
-- Alumni placements — where graduates went (this is the most persuasive thing a
+- Student roster — name, degree programme, entry year, research topic
+- Alumni entries — one per graduate: degree and graduation year, **thesis topic,
+  and first placement after graduation** (this is the most persuasive thing a
   lab site can show a prospective student)
 - Prof. Lin's photo
+
+**Members-page policy (set 2026-09-03):** the advisor and the students are
+separate pages (`v-advisor` / `v-members`); the members page splits Ph.D. /
+M.S. / project students / alumni; **no member photos are published** — some
+alumni may not want theirs shown, so none are used until the lab decides
+otherwise. Do not re-add photo boxes to member rows.
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
   original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
   deck, so it is raster and carries a baked-in background

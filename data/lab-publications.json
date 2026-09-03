@@ -19,5 +19,22 @@
     "Massive Figure Extraction and Classification in Electronic Component Datasheets for Accelerating PCB Design Preparation",
     "Late Breaking Results: Automatic Adaptive MOM Capacitor Cell Generation for Analog and Mixed-Signal Layout Design",
     "Corner-Stitching-Based Multilayer Obstacle-Avoiding Component-to-Component Rectilinear Minimum Spanning Tree Construction"
+  ],
+  "_excluded_nycu_era": [
+    "FOR PROF. LIN'S REVIEW - the 11 papers from 2020 onward that were NOT included, and why.",
+    "To move one onto the lab page, cut its exact title into the include list above and rerun the injection.",
+    "2026 DATE | Optimizing Multibit Flip-Flop Banking via Agile In-Placement PPA Co-Optimization | co-authored with Prof. Hung-Ming Chen",
+    "2024 IEEE TASE | SSIOE: Self-Supervised Indoor Occupancy Estimation for Intelligent Building Management | Prof. Ching-Chun Huang's group leads (last author)",
+    "2023 ASP-DAC | On Automating Finger-Cap Array Synthesis with Optimal Parasitic Matching for Custom SAR ADC | multi-PI project (Profs. Jou, Wu, Chiang, Liu, Chen)",
+    "2023 IEEE TCAD | On Reducing LDE Variations in Modern Analog Placement | co-authored with Prof. Hung-Ming Chen",
+    "2023 IEEE TCAD | Pole-Aware Analog Layout Synthesis Considering Monotonic Current Flows and Wire Crossings | co-authored with Prof. Hung-Ming Chen",
+    "2023 SMACD | Layout Synthesis of Analog Primitive Cells with Variational Autoencoder | co-authored with Profs. Chien-Nan Jimmy Liu and Hung-Ming Chen",
+    "2022 ASP-DAC | Common-Centroid Layout for Active and Passive Devices: A Review and the Road Ahead | Univ. of Minnesota-led survey (Profs. Harjani, Sapatnekar)",
+    "2022 SMACD | On Optimizing Capacitor Array Design for Advanced Node SAR ADC | multi-PI project (Profs. Jou, Liu, Chen)",
+    "2020 DAC LBR | Late Breaking Results: Pole-aware Analog Placement Considering Monotonic Current Flow and Crossing-Wire Minimization | co-authored with Prof. Hung-Ming Chen",
+    "2020 ICCAD | Achieving Analog Layout Integrity through Learning and Migration (invited talk) | joint invited talk with Profs. Liu and Chen",
+    "2020 ICCAD | Overview of 2020 CAD Contest at ICCAD | contest-organizer overview, not lab research",
+    "Also excluded: all 45 papers before 2020 (pre-NYCU: CCU and SpringSoft era) - they live on Prof. Lin's page and DBLP.",
+    "Borderline INCLUDES worth double-checking: 'A Novel Technology Mapper for Complex Universal Gates' (ASP-DAC 2021) and the Corner-Stitching TCAD 2020 paper - both may date to the CCU era despite the publication year."
   ]
 }

@@ -2,6 +2,20 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-03 — advisor and members split into separate pages; no member photos
+
+- People split in two: **Advisor** (full bio, career record, links out) and
+  **Members** (Ph.D. / M.S. / project students / Alumni), each with its own nav
+  entry
+- Member rows are now text-only — no photo boxes. Policy: some alumni may not
+  want their photo shown, so none are published (see README)
+- Alumni entries get a fixed format: name · degree and graduation year · thesis
+  topic · first placement after graduation; a format-example row is in place
+  until the real list arrives
+- `data/lab-publications.json` now documents the 11 NYCU-era papers that were
+  **excluded** and the reason for each, plus two borderline includes to
+  double-check — so Prof. Lin can review the curation in one file
+
 ## 2026-09-03 — attribution cleanup: lab vs. advisor
 
 The page was claiming Prof. Lin's entire career as the lab's own. Fixed on his
