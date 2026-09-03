@@ -91,9 +91,6 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 - English names, research topics and personal links for the 18 students now
   listed (Chinese names supplied 2026-09-03)
-- Two names to confirm before launch: 李尚哲 (source display name had
-  "leeshuncher" appended — possibly his romanization) and "Hong 鴻" (listed as
-  given; confirm the preferred public form)
 - Alumni entries — one per graduate: degree and graduation year, **thesis topic,
   and first placement after graduation** (this is the most persuasive thing a
   lab site can show a prospective student)
