@@ -2,6 +2,17 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-03 — real student roster added (18 names)
+
+- Members page now lists the actual roster: 1 Ph.D. student and 17 M.S.
+  students, ordered by seniority (senior first) with the year level
+  deliberately not shown
+- Placeholder rows and the empty project-student section removed; names render
+  in a compact grid, Chinese names shown in both language modes until English
+  names are supplied
+- Still pending: English names, research topics, personal links, alumni list;
+  two name forms flagged in the README for confirmation
+
 ## 2026-09-03 — advisor and members split into separate pages; no member photos
 
 - People split in two: **Advisor** (full bio, career record, links out) and

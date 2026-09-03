@@ -89,7 +89,11 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 ## What still needs supplying
 
-- Student roster — name, degree programme, entry year, research topic
+- English names, research topics and personal links for the 18 students now
+  listed (Chinese names supplied 2026-09-03)
+- Two names to confirm before launch: 李尚哲 (source display name had
+  "leeshuncher" appended — possibly his romanization) and "Hong 鴻" (listed as
+  given; confirm the preferred public form)
 - Alumni entries — one per graduate: degree and graduation year, **thesis topic,
   and first placement after graduation** (this is the most persuasive thing a
   lab site can show a prospective student)
@@ -97,9 +101,11 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 **Members-page policy (set 2026-09-03):** the advisor and the students are
 separate pages (`v-advisor` / `v-members`); the members page splits Ph.D. /
-M.S. / project students / alumni; **no member photos are published** — some
-alumni may not want theirs shown, so none are used until the lab decides
-otherwise. Do not re-add photo boxes to member rows.
+M.S. / alumni; **no member photos are published** — some alumni may not want
+theirs shown, so none are used until the lab decides otherwise. Do not re-add
+photo boxes to member rows. **Ordering:** members are listed by seniority,
+senior first, but the year level itself is deliberately NOT displayed anywhere
+on the page — keep new names in seniority order without labeling it.
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
   original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
   deck, so it is raster and carries a baked-in background

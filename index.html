@@ -144,6 +144,8 @@ h3.year{font-size:16px; color:var(--ink-3); font-weight:600; margin:26px 0 2px;
 .spot .role{font-size:14.5px; color:var(--ink-3); line-height:1.6; margin-bottom:14px}
 
 /* ── member rows (text only — no photos by lab policy) ──────────── */
+.mgrid{max-width:70ch; display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:10px 24px; font-size:15.5px; color:var(--ink); padding:4px 0 8px}
 .mrow{max-width:70ch; padding:11px 0; border-bottom:1px solid var(--line);
   font-size:15.5px; color:var(--ink-2); line-height:1.6}
 .mrow b{color:var(--ink); font-weight:600}
@@ -348,20 +350,25 @@ footer .base{margin-top:26px; padding-top:16px; border-top:1px solid var(--line)
 <!-- ═══ MEMBERS (students and alumni — the advisor has his own page) ═══ -->
 <div class="view" id="v-members">
   <h2 class="sec"><span class="l-en">Members</span><span class="l-zh">實驗室成員</span></h2>
-  <p class="aside"><span class="zhu l-en">Names being collected.</span><span class="zhu l-zh">名單整理中。</span>
-    <span class="l-en">Each member appears as one line — name, programme and entry year, research topic, personal link. Member photos are intentionally not published.</span>
-    <span class="l-zh">每位成員一列：中英文姓名、學制與入學年、研究題目、個人連結。成員頁不刊登照片。</span></p>
+  <p class="aside"><span class="l-en">English names, research topics and personal links are being added. Member photos are intentionally not published.</span>
+    <span class="l-zh">英文姓名、研究題目與個人連結整理中。成員頁不刊登照片。</span></p>
 
   <h3 class="sub"><span class="l-en">Ph.D. students</span><span class="l-zh">博士班</span></h3>
-  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">Ph.D. student · entry year and research topic to come</span><span class="pm l-zh">博士生 · 入學年與研究題目待補</span></div>
+  <div class="mgrid">
+    <div>Atic</div>
+  </div>
 
   <h3 class="sub"><span class="l-en">M.S. students</span><span class="l-zh">碩士班</span></h3>
-  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div>
-  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div>
-  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">M.S. student · entry year and research topic to come</span><span class="pm l-zh">碩士生 · 入學年與研究題目待補</span></div>
-
-  <h3 class="sub"><span class="l-en">Undergraduate project students</span><span class="l-zh">專題生</span></h3>
-  <div class="mrow"><b class="l-en">Name to come</b><b class="l-zh">姓名待補</b><br><span class="pm l-en">Project student</span><span class="pm l-zh">專題生</span></div>
+  <!-- Ordered by seniority, senior first. Insert new members in seniority
+       order; the ordering basis itself is deliberately not displayed. -->
+  <div class="mgrid">
+    <div>鄭維芸</div><div>陳宥澄</div><div>李揚靖</div>
+    <div>林酩荏</div><div>吳瑞宸</div><div>陳祖佑</div>
+    <div>王信驊</div><div>呂丞頤</div><div>李尚哲</div>
+    <div>黃駿甯</div><div>朱昕頤</div><div>陳柏樺</div>
+    <div>許綜洧</div><div>胡芷寧</div><div>Hong 鴻</div>
+    <div>蔡宜樺</div><div>陳慕義</div>
+  </div>
 
   <h2 class="sec"><span class="l-en">Alumni</span><span class="l-zh">畢業生</span></h2>
   <p class="aside"><span class="l-en">Graduates stay on this page permanently — one entry each with degree and year, thesis topic, and where they went after graduation. List being collected; the row below shows the format.</span>
