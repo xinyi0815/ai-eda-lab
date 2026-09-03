@@ -2,6 +2,12 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-03 — alumni complete against the lab's records (22 graduates)
+
+- 林嘉緯 (Chia-Wei Lin, 110) and 林禹丞 (Yu-Cheng Lin, 111) added
+- Sin-Han Huang confirmed as another lab's student — not listed
+- Every student folder in the lab's records is now accounted for
+
 ## 2026-09-03 — alumni fixes: ordering, equal treatment, one addition
 
 - 何浩文 and 康培新 moved to the top of the alumni list (three-year M.S.,
