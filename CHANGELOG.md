@@ -2,6 +2,15 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-03 — alumni fixes: ordering, equal treatment, one addition
+
+- 何浩文 and 康培新 moved to the top of the alumni list (three-year M.S.,
+  the most recent graduates)
+- 翁敬堯 (Jing-Yao Weng, 111 cohort) added — the list is now 20 graduates
+- Per-person lines reduced to bare paper titles: venue names, awards and
+  author-position claims removed so no graduate overshadows another (policy
+  recorded in the README)
+
 ## 2026-09-03 — alumni list added (19 graduates)
 
 - Alumni section now lists 19 M.S. graduates, confirmed against national
