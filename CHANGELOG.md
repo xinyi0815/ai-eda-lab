@@ -2,6 +2,18 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-03 — alumni list added (19 graduates)
+
+- Alumni section now lists 19 M.S. graduates, confirmed against national
+  thesis records, newest cohort first; graduation years, thesis topics and
+  placements still being collected
+- Three graduates carry a representative-work line (first-authored lab papers
+  only, per the attribution policy): the Netlistify Best Artifact first author,
+  the MLCAD 2022 first author / patent inventor, and the MLCAD 2021 first author
+- Chinese-mode news items now use the graduates' Chinese names
+- Four more probable alumni await Chinese-name confirmation (tracked in the
+  local-only worksheet under 參考資料/)
+
 ## 2026-09-03 — real student roster added (18 names)
 
 - Members page now lists the actual roster: 1 Ph.D. student and 17 M.S.

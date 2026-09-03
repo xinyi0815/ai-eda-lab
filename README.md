@@ -91,9 +91,12 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 - English names, research topics and personal links for the 18 students now
   listed (Chinese names supplied 2026-09-03)
-- Alumni entries — one per graduate: degree and graduation year, **thesis topic,
-  and first placement after graduation** (this is the most persuasive thing a
-  lab site can show a prospective student)
+- For the 19 alumni now listed (confirmed via thesis records, 2026-09-03):
+  **graduation year, thesis topic, and first placement** for each (placements
+  are the most persuasive thing a lab site can show a prospective student)
+- Chinese names for four more probable alumni found in the lab's records:
+  Sin-Han Huang, Chia-Wei Lin (DAC 2024 first author), Jing-Yao Weng, and one
+  more (see 參考資料/alumni-roster-draft.md, which is local-only and gitignored)
 - Prof. Lin's photo
 
 **Members-page policy (set 2026-09-03):** the advisor and the students are
