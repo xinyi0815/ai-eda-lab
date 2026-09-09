@@ -2,6 +2,12 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-09 — roster corrections
+
+- Ph.D. students: Atic's full name added (張志廉), and 葉青豐 (Craig) added —
+  two Ph.D. students now
+- 胡芷寧 removed from the M.S. list
+
 ## 2026-09-03 — alumni complete against the lab's records (22 graduates)
 
 - 林嘉緯 (Chia-Wei Lin, 110) and 林禹丞 (Yu-Cheng Lin, 111) added
