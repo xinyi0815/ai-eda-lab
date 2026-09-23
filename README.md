@@ -89,11 +89,11 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 ## What still needs supplying
 
-- English names, research topics and personal links for the 18 students now
-  listed (Chinese names supplied 2026-09-03)
-- For the 22 alumni now listed (confirmed via thesis records, 2026-09-03;
-  the full working sheet is 參考資料/alumni-roster-draft.md, local-only and
-  gitignored): **graduation year, thesis topic, and first placement** for each
+- English names, research topics and personal links for the 16 current
+  students (Chinese names supplied 2026-09-03)
+- For the 24 alumni now listed (English names still missing for the two 2026
+  graduates, 鄭維芸 and 陳宥澄, who show in Chinese in both language modes):
+  **graduation year, thesis topic, and first placement** for each
   (placements are the most persuasive thing a lab site can show a prospective
   student)
 
@@ -109,6 +109,14 @@ theirs shown, so none are used until the lab decides otherwise. Do not re-add
 photo boxes to member rows. **Ordering:** members are listed by seniority,
 senior first, but the year level itself is deliberately NOT displayed anywhere
 on the page — keep new names in seniority order without labeling it.
+
+**Where the roster lives:** the master list — including year levels and entry
+cohorts, which the public page must never show — is
+`參考資料/ai-eda-lab-roster.csv` (local-only, gitignored, UTF-8 with BOM so
+Excel opens it cleanly). How each alumnus was matched to the lab's records is
+in `參考資料/alumni-roster-draft.md`. Year levels roll over every August with
+the Taiwanese academic year; when a student graduates, move them from the
+students grid to the top of the alumni list.
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
   original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
   deck, so it is raster and carries a baked-in background

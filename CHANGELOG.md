@@ -2,6 +2,16 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-09-23 — new academic year: two graduates
+
+- 鄭維芸 and 陳宥澄 graduated: moved from the M.S. list to Alumni, directly
+  after 何浩文 and 康培新. Their English names are not confirmed yet, so their
+  Chinese names show in both language modes
+- The site now lists 16 current students (2 Ph.D., 14 M.S.) and 24 alumni
+- Footer build date updated (the 2026-09-09 change had missed it)
+- README now records where the internal roster lives and how the yearly
+  rollover works
+
 ## 2026-09-09 — roster corrections
 
 - Ph.D. students: Atic's full name added (張志廉), and 葉青豐 (Craig) added —
