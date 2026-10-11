@@ -89,34 +89,11 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 
 ## What still needs supplying
 
-- English names, research topics and personal links for the 16 current
-  students (Chinese names supplied 2026-09-03)
-- For the 24 alumni now listed (English names still missing for the two 2026
-  graduates, 鄭維芸 and 陳宥澄, who show in Chinese in both language modes):
-  **graduation year, thesis topic, and first placement** for each
-  (placements are the most persuasive thing a lab site can show a prospective
-  student)
-
-**Alumni-row policy (set 2026-09-03):** each graduate's line carries the bare
-paper/thesis title only — no venue names, awards, or author-position claims —
-so no graduate overshadows another. Do not decorate individual alumni rows.
+- English names for six current students (they show in Chinese in both
+  language modes until then); research topics and personal links for all
+- Placements for the nine alumni who have not answered the survey yet (15 of
+  24 are in); graduation years and thesis topics for all
 - Prof. Lin's photo
-
-**Members-page policy (set 2026-09-03):** the advisor and the students are
-separate pages (`v-advisor` / `v-members`); the members page splits Ph.D. /
-M.S. / alumni; **no member photos are published** — some alumni may not want
-theirs shown, so none are used until the lab decides otherwise. Do not re-add
-photo boxes to member rows. **Ordering:** members are listed by seniority,
-senior first, but the year level itself is deliberately NOT displayed anywhere
-on the page — keep new names in seniority order without labeling it.
-
-**Where the roster lives:** the master list — including year levels and entry
-cohorts, which the public page must never show — is
-`參考資料/ai-eda-lab-roster.csv` (local-only, gitignored, UTF-8 with BOM so
-Excel opens it cleanly). How each alumnus was matched to the lab's records is
-in `參考資料/alumni-roster-draft.md`. Year levels roll over every August with
-the Taiwanese academic year; when a student graduates, move them from the
-students grid to the top of the alumni list.
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
   original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
   deck, so it is raster and carries a baked-in background
@@ -124,6 +101,31 @@ students grid to the top of the alumni list.
 - **Confirmation that the ICCAD 2024 contest teams were this lab's students**
 - **Confirmation of the five research descriptions**, which were drafted from the
   publication record and have not been reviewed by Prof. Lin
+
+## Members page — rules and where the data lives
+
+- **Advisor and members are separate pages** (`v-advisor` / `v-members`); the
+  members page splits Ph.D. / M.S. / alumni.
+- **No member photos.** Some alumni may not want theirs shown, so none are used
+  until the lab decides otherwise. Do not re-add photo boxes.
+- **Current students are ordered by seniority, but the year level is never
+  shown** — not on the page and not in HTML comments (the repo is public).
+- **Alumni rows are equal.** Newest graduates first. Each row is: name → company
+  · role, plus the bare title of a lab paper where one exists — no venue names,
+  awards, or author-position claims, so no graduate overshadows another.
+- **Names:** English mode shows the English name where one is confirmed, the
+  Chinese name otherwise. Never derive one from the other.
+- **Placements** come from the alumni survey (a Google Form posted in the lab's
+  LINE group). Company names appear in Chinese as the lab writes them and in
+  English under the company's own English name (聯發科 → MediaTek, 創意 → GUC,
+  毅誠電子 → TrustTeks, and so on).
+- **The master roster** — with year levels and entry cohorts, which the public
+  page must never show — is a Google Sheet kept by the webmaster, exported to
+  `參考資料/ai-eda-lab-roster.csv` (local-only, gitignored, UTF-8 with BOM so
+  Excel opens it cleanly). How each alumnus was matched to the lab's records is
+  in `參考資料/alumni-roster-draft.md`. Year levels roll over every August with
+  the Taiwanese academic year; when a student graduates, move them from the
+  students grid to the top of the alumni list.
 
 ## Where this is going
 

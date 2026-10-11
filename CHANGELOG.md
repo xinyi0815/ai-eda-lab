@@ -2,6 +2,17 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-10-11 — alumni placements and student English names
+
+- Alumni rows now show where each graduate went: company · role, for the 15
+  who answered the alumni survey (e.g. MediaTek, Novatek, TSMC, NVIDIA, AMD).
+  The others show their name only until they reply
+- English names added for 10 of the 16 current students (including the two
+  Ph.D. students' English names, Atic and Craig) and for the two 2026
+  graduates; English mode shows them, Chinese mode is unchanged
+- README: the members-page rules are gathered into one section, and the
+  "still needs supplying" list (which earlier edits had split) is whole again
+
 ## 2026-09-23 — new academic year: two graduates
 
 - 鄭維芸 and 陳宥澄 graduated: moved from the M.S. list to Alumni, directly

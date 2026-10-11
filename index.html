@@ -149,6 +149,8 @@ h3.year{font-size:16px; color:var(--ink-3); font-weight:600; margin:26px 0 2px;
   font-size:15.5px; color:var(--ink-2); line-height:1.6}
 .mrow b{color:var(--ink); font-weight:600}
 .mrow .pm{font-size:14px; color:var(--ink-3)}
+.mrow .pl{margin-left:14px; color:var(--ink-2)}
+.mrow .pl::before{content:"→ "; color:var(--ink-3)}
 
 /* ── q&a ────────────────────────────────────────────────────────── */
 .qa{max-width:72ch}
@@ -348,55 +350,55 @@ footer .base{margin-top:26px; padding-top:16px; border-top:1px solid var(--line)
 <!-- ═══ MEMBERS (students and alumni — the advisor has his own page) ═══ -->
 <div class="view" id="v-members">
   <h2 class="sec"><span class="l-en">Members</span><span class="l-zh">實驗室成員</span></h2>
-  <p class="aside"><span class="l-en">English names, research topics and personal links are being added. Member photos are intentionally not published.</span>
-    <span class="l-zh">英文姓名、研究題目與個人連結整理中。成員頁不刊登照片。</span></p>
+  <p class="aside"><span class="l-en">Research topics and personal links are being added. Member photos are intentionally not published.</span>
+    <span class="l-zh">研究題目與個人連結整理中。成員頁不刊登照片。</span></p>
 
   <h3 class="sub"><span class="l-en">Ph.D. students</span><span class="l-zh">博士班</span></h3>
   <div class="mgrid">
-    <div>張志廉 (Atic)</div>
-    <div>葉青豐 (Craig)</div>
+    <div><span class="l-en">Atic</span><span class="l-zh">張志廉 (Atic)</span></div>
+    <div><span class="l-en">Craig</span><span class="l-zh">葉青豐 (Craig)</span></div>
   </div>
 
   <h3 class="sub"><span class="l-en">M.S. students</span><span class="l-zh">碩士班</span></h3>
   <!-- Ordered by seniority, senior first. Insert new members in seniority
        order; the ordering basis itself is deliberately not displayed. -->
   <div class="mgrid">
-    <div>李揚靖</div><div>林酩荏</div><div>吳瑞宸</div>
-    <div>陳祖佑</div><div>王信驊</div><div>呂丞頤</div>
-    <div>李尚哲</div><div>黃駿甯</div><div>朱昕頤</div>
-    <div>陳柏樺</div><div>許綜洧</div><div>陳銘鴻</div>
+    <div><span class="l-en">Yang-Ching Lee</span><span class="l-zh">李揚靖</span></div><div>林酩荏</div><div>吳瑞宸</div>
+    <div><span class="l-en">Tsu-Yu Chen</span><span class="l-zh">陳祖佑</span></div><div><span class="l-en">Sin-Hua Wang</span><span class="l-zh">王信驊</span></div><div><span class="l-en">Cheng-Yi Lu</span><span class="l-zh">呂丞頤</span></div>
+    <div><span class="l-en">Shang-Che Lee</span><span class="l-zh">李尚哲</span></div><div><span class="l-en">Chung-Ning Huang</span><span class="l-zh">黃駿甯</span></div><div><span class="l-en">Xin-Yi Chu</span><span class="l-zh">朱昕頤</span></div>
+    <div><span class="l-en">Po-Hua Chen</span><span class="l-zh">陳柏樺</span></div><div>許綜洧</div><div>陳銘鴻</div>
     <div>蔡宜樺</div><div>陳慕義</div>
   </div>
 
   <h2 class="sec"><span class="l-en">Alumni</span><span class="l-zh">畢業生</span></h2>
-  <p class="aside"><span class="l-en">All M.S. graduates of the lab, newest first. Graduation years, thesis topics and placements are being added; graduates stay on this page permanently.</span>
-    <span class="l-zh">實驗室歷屆碩士畢業生，由新至舊排列。畢業年、論文題目與畢業去向整理中；畢業生將永久保留在此頁。</span></p>
+  <p class="aside"><span class="l-en">All M.S. graduates of the lab, newest first, with where they went after graduation. Graduates stay on this page permanently.</span>
+    <span class="l-zh">實驗室歷屆碩士畢業生，由新至舊排列，並附畢業後去向。畢業生將永久保留在此頁。</span></p>
   <!-- Ordered newest graduates first; keep new graduates at the top.
        Per-person lines carry bare paper titles only — no venues, awards or
        author-position claims, so no graduate overshadows another. -->
-  <div class="mrow"><b class="l-en">Hao-Wen Ho</b><b class="l-zh">何浩文</b></div>
-  <div class="mrow"><b class="l-en">Pei-Hsin Kang</b><b class="l-zh">康培新</b></div>
-  <div class="mrow"><b>鄭維芸</b></div>
-  <div class="mrow"><b>陳宥澄</b></div>
-  <div class="mrow"><b class="l-en">Chun-Yen Huang</b><b class="l-zh">黃浚彥</b><br>
+  <div class="mrow"><b class="l-en">Hao-Wen Ho</b><b class="l-zh">何浩文</b><span class="pl"><span class="l-en">Airoha · BE</span><span class="l-zh">達發 · BE</span></span></div>
+  <div class="mrow"><b class="l-en">Pei-Hsin Kang</b><b class="l-zh">康培新</b><span class="pl"><span class="l-en">MediaTek · CAD</span><span class="l-zh">聯發科 · CAD</span></span></div>
+  <div class="mrow"><b class="l-en">Wei-Yun Cheng</b><b class="l-zh">鄭維芸</b><span class="pl"><span class="l-en">Winbond · CAD</span><span class="l-zh">華邦電 · CAD</span></span></div>
+  <div class="mrow"><b class="l-en">Yu-Cheng Chen</b><b class="l-zh">陳宥澄</b></div>
+  <div class="mrow"><b class="l-en">Chun-Yen Huang</b><b class="l-zh">黃浚彥</b><span class="pl"><span class="l-en">Novatek · CAD</span><span class="l-zh">聯詠 · CAD</span></span><br>
     <span class="pm">Netlistify: Transforming Circuit Schematics into Netlists with Deep Learning</span></div>
-  <div class="mrow"><b class="l-en">Jing-Yao Weng</b><b class="l-zh">翁敬堯</b></div>
-  <div class="mrow"><b class="l-en">Yu-Cheng Lin</b><b class="l-zh">林禹丞</b></div>
-  <div class="mrow"><b class="l-en">Yu-Wei Chang</b><b class="l-zh">張予威</b></div>
-  <div class="mrow"><b class="l-en">Chen-Wen Chen</b><b class="l-zh">陳振文</b></div>
-  <div class="mrow"><b class="l-en">Hsin-Wen Chang</b><b class="l-zh">張馨文</b></div>
-  <div class="mrow"><b class="l-en">Chia-Wei Lin</b><b class="l-zh">林嘉緯</b><br>
+  <div class="mrow"><b class="l-en">Jing-Yao Weng</b><b class="l-zh">翁敬堯</b><span class="pl"><span class="l-en">Silicon Motion · APR</span><span class="l-zh">慧榮 · APR</span></span></div>
+  <div class="mrow"><b class="l-en">Yu-Cheng Lin</b><b class="l-zh">林禹丞</b><span class="pl"><span class="l-en">MediaTek · APR</span><span class="l-zh">聯發科 · APR</span></span></div>
+  <div class="mrow"><b class="l-en">Yu-Wei Chang</b><b class="l-zh">張予威</b><span class="pl"><span class="l-en">WNC</span><span class="l-zh">啟碁</span></span></div>
+  <div class="mrow"><b class="l-en">Chen-Wen Chen</b><b class="l-zh">陳振文</b><span class="pl"><span class="l-en">GUC · CAD</span><span class="l-zh">創意 · CAD</span></span></div>
+  <div class="mrow"><b class="l-en">Hsin-Wen Chang</b><b class="l-zh">張馨文</b><span class="pl"><span class="l-en">Novatek · DE</span><span class="l-zh">聯詠 · DE</span></span></div>
+  <div class="mrow"><b class="l-en">Chia-Wei Lin</b><b class="l-zh">林嘉緯</b><span class="pl"><span class="l-en">TSMC · APR</span><span class="l-zh">台積電 · APR</span></span><br>
     <span class="pm">Voronoi Diagram-based Multiple Power Plane Generation on Redistribution Layers in 3D ICs</span></div>
   <div class="mrow"><b class="l-en">Shu-Hsiang Yang</b><b class="l-zh">楊舒翔</b></div>
-  <div class="mrow"><b class="l-en">Ying-Hao Chen</b><b class="l-zh">陳盈豪</b></div>
-  <div class="mrow"><b class="l-en">Chun-Lin Ko</b><b class="l-zh">柯君霖</b></div>
+  <div class="mrow"><b class="l-en">Ying-Hao Chen</b><b class="l-zh">陳盈豪</b><span class="pl"><span class="l-en">Phison · Advanced Digital IC Design Flow Engineer</span><span class="l-zh">群聯 · 前瞻數位IC設計流程工程師</span></span></div>
+  <div class="mrow"><b class="l-en">Chun-Lin Ko</b><b class="l-zh">柯君霖</b><span class="pl">NVIDIA · APR</span></div>
   <div class="mrow"><b class="l-en">Hsuan-I Chen</b><b class="l-zh">陳軒翊</b></div>
   <div class="mrow"><b class="l-en">Chou-Chen Lee</b><b class="l-zh">李宙澄</b></div>
-  <div class="mrow"><b class="l-en">Hung-Yun Hsu</b><b class="l-zh">徐弘運</b><br>
+  <div class="mrow"><b class="l-en">Hung-Yun Hsu</b><b class="l-zh">徐弘運</b><span class="pl">AMD · DV</span><br>
     <span class="pm">Automatic Analog Schematic Diagram Generation based on Building Block Classification and Reinforcement Learning</span></div>
   <div class="mrow"><b class="l-en">Po-Chun Wang</b><b class="l-zh">王博群</b></div>
-  <div class="mrow"><b class="l-en">Shuo-Hung Hsu</b><b class="l-zh">徐碩鴻</b></div>
-  <div class="mrow"><b class="l-en">Ting-Yu Chien</b><b class="l-zh">簡廷羽</b></div>
+  <div class="mrow"><b class="l-en">Shuo-Hung Hsu</b><b class="l-zh">徐碩鴻</b><span class="pl"><span class="l-en">Phison</span><span class="l-zh">群聯</span></span></div>
+  <div class="mrow"><b class="l-en">Ting-Yu Chien</b><b class="l-zh">簡廷羽</b><span class="pl"><span class="l-en">TrustTeks · DV</span><span class="l-zh">毅誠電子 · DV</span></span></div>
   <div class="mrow"><b class="l-en">Yu-Tzu Chang</b><b class="l-zh">張育慈</b></div>
   <div class="mrow"><b class="l-en">Ching-An Hsu</b><b class="l-zh">徐慶安</b></div>
   <div class="mrow"><b class="l-en">Kuan-Chun Chen</b><b class="l-zh">陳冠君</b><br>
@@ -458,8 +460,8 @@ footer .base{margin-top:26px; padding-top:16px; border-top:1px solid var(--line)
     </div>
   </div>
   <div class="base">
-    <span class="l-en">&copy; 2026 AI-EDA Lab, NYCU · Site maintained by lab members · Last built September 23, 2026</span>
-    <span class="l-zh">&copy; 2026 國立陽明交通大學 AI-EDA 實驗室 · 網站由實驗室成員維護 · 最後建置 2026 年 9 月 23 日</span>
+    <span class="l-en">&copy; 2026 AI-EDA Lab, NYCU · Site maintained by lab members · Last built October 11, 2026</span>
+    <span class="l-zh">&copy; 2026 國立陽明交通大學 AI-EDA 實驗室 · 網站由實驗室成員維護 · 最後建置 2026 年 10 月 11 日</span>
   </div>
 </footer>
 
