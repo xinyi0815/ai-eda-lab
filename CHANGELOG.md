@@ -2,6 +2,15 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-10-11 — three leftover attribution errors fixed
+
+- Research, analog layout: no longer calls Prof. Lin's nine U.S. patents "the
+  lab's"; now points to the lab's own DAC and ISPD papers
+- Research, physical design: dropped the co-advised DATE 2026 paper; the
+  example is now the lab's two ICCAD 2024 contest prizes
+- News: the 2025 patent is no longer called "the lab's ninth" (the other eight
+  predate the lab)
+
 ## 2026-10-11 — alumni job roles removed
 
 - Alumni rows now show the company only. Job roles had been published by

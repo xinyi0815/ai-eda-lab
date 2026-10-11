@@ -258,13 +258,13 @@ footer .base{margin-top:26px; padding-top:16px; border-top:1px solid var(--line)
 
     <h3 class="sub l-en">Analog and mixed-signal layout automation</h3>
     <h3 class="sub l-zh">類比與混合訊號佈局自動化</h3>
-    <p class="l-en">Analog layout resists automation because so much of it is unwritten: symmetry, matching, proximity, parasitic sensitivity. We formalize those constraints and generate layouts that respect them — symmetry-island placement, common-centroid structures, parasitic-aware sizing — work behind several of the lab's <b>9 U.S. patents</b> and its DAC and ICCAD papers.</p>
-    <p class="l-zh">類比佈局難以自動化，是因為大量知識從未被寫下來：對稱、匹配、鄰近性、寄生效應敏感度。我們將這些限制形式化並自動產生符合的佈局 — 對稱島擺置、共質心結構、考慮寄生效應的尺寸設計 — 這些工作是實驗室 <b>9 件美國專利</b>與多篇 DAC、ICCAD 論文的基礎。</p>
+    <p class="l-en">Analog layout resists automation because so much of it is unwritten: symmetry, matching, proximity, parasitic sensitivity. We formalize those constraints and generate layouts that respect them — symmetry-island placement, common-centroid structures, parasitic-aware sizing — a line of work that runs through the lab's papers at DAC and ISPD.</p>
+    <p class="l-zh">類比佈局難以自動化，是因為大量知識從未被寫下來：對稱、匹配、鄰近性、寄生效應敏感度。我們將這些限制形式化並自動產生符合的佈局 — 對稱島擺置、共質心結構、考慮寄生效應的尺寸設計 — 這條研究線貫穿實驗室在 DAC 與 ISPD 發表的論文。</p>
 
     <h3 class="sub l-en">Physical design automation</h3>
     <h3 class="sub l-zh">實體設計自動化</h3>
-    <p class="l-en">Placement, legalization and routing at modern densities — most recently multibit flip-flop banking for power–timing co-optimization (<i>DATE 2026</i>) and GPU-accelerated logic rewriting, which took 2nd place in the ICCAD 2024 CAD Contest.</p>
-    <p class="l-zh">現代密度下的擺置、合法化與繞線 — 近期包括多位元正反器合併以共同最佳化功耗與時序（<i>DATE 2026</i>），以及在 ICCAD 2024 CAD 競賽獲第二名的 GPU 加速邏輯改寫。</p>
+    <p class="l-en">Placement, legalization and routing at modern densities — most recently GPU-accelerated logic rewriting and multibit flip-flop optimization for power and timing, which took 2nd and 3rd place in the ICCAD 2024 CAD Contest.</p>
+    <p class="l-zh">現代密度下的擺置、合法化與繞線 — 近期包括 GPU 加速邏輯改寫，以及多位元正反器的功耗與時序最佳化，分別在 ICCAD 2024 CAD 競賽獲得第二名與第三名。</p>
 
     <h3 class="sub l-en">3D integration and advanced packaging</h3>
     <h3 class="sub l-zh">三維積體電路與先進封裝</h3>
@@ -474,8 +474,8 @@ const BUILD_YM = '2026-09';
 
 const NEWS = [
   {ym:'2025-11', d:{en:'Nov 2025', zh:'2025年11月'},
-   en:'U.S. Patent No. 12,475,291, <i>Method for generating analog schematic diagrams based on building block classification and reinforcement learning</i> (H.-Y. Hsu, P.-H. Lin and Y.-T. Hsieh), issued November 18 — the lab’s ninth U.S. patent.',
-   zh:'美國專利第 12,475,291 號《基於building block分類與強化學習之類比電路圖生成方法》（H.-Y. Hsu、林柏宏、Y.-T. Hsieh）於 11 月 18 日獲證 — 實驗室第九件美國專利。'},
+   en:'U.S. Patent No. 12,475,291, <i>Method for generating analog schematic diagrams based on building block classification and reinforcement learning</i> (H.-Y. Hsu, P.-H. Lin and Y.-T. Hsieh), issued November 18.',
+   zh:'美國專利第 12,475,291 號《基於building block分類與強化學習之類比電路圖生成方法》（H.-Y. Hsu、林柏宏、Y.-T. Hsieh）於 11 月 18 日獲證。'},
   {ym:'2025-09', d:{en:'Sep 2025', zh:'2025年9月'},
    en:'<b>Best Artifact Award, MLCAD 2025</b> — <i>Netlistify: Transforming Circuit Schematics into Netlists with Deep Learning</i>, by Chun-Yen Huang, Hsuan-I Chen, Hao-Wen Ho and Pei-Hsin Kang with Prof. Lin, and Wen-Hao Liu and Haoxing Ren of NVIDIA. <a href="https://github.com/NYCU-AI-EDA/Netlistify" target="_blank" rel="noopener">Code on GitHub</a>',
    zh:'<b>MLCAD 2025 最佳成果獎</b> — <i>Netlistify: Transforming Circuit Schematics into Netlists with Deep Learning</i>，作者黃浚彥、陳軒翊、何浩文、康培新與林柏宏教授，並與 NVIDIA 的 Wen-Hao Liu、Haoxing Ren 合作。<a href="https://github.com/NYCU-AI-EDA/Netlistify" target="_blank" rel="noopener">GitHub 原始碼</a>'},
