@@ -92,7 +92,9 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 - English names for six current students (they show in Chinese in both
   language modes until then); research topics and personal links for all
 - Placements for the nine alumni who have not answered the survey yet (15 of
-  24 are in); graduation years and thesis topics for all
+  24 are in); degree and thesis title for each (from the national thesis
+  database) — but not graduation years, see the members rules below
+- A research topic for each current student (one line each)
 - A higher-resolution photo of Prof. Lin — `assets/advisor.jpg` is the 160×200
   portrait from his profile page, which looks soft on high-density screens
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
@@ -117,8 +119,13 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
 - **Job roles are never published.** The alumni survey asks for role only so
   juniors know whom to ask about jobs and referrals; alumni were told it stays
   internal. The role column lives in the master roster, not on the page.
-- **Names:** English mode shows the English name where one is confirmed, the
-  Chinese name otherwise. Never derive one from the other.
+- **Names:** Chinese and English side by side, the same in both language modes
+  (students: English on a second line; alumni: English after the Chinese name).
+  A member with no confirmed English name shows the Chinese name alone. Never
+  derive one from the other.
+- **No graduation years, ever.** Some members take four years for an M.S., and
+  visible years would invite questions that put prospective students off.
+  Degree and thesis title may be added; the year may not.
 - **Placements** come from the alumni survey (a Google Form posted in the lab's
   LINE group). Company names appear in Chinese as the lab writes them and in
   English under the company's own English name (聯發科 → MediaTek, 創意 → GUC,

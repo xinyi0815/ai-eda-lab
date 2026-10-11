@@ -2,6 +2,14 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-10-11 — member names shown in Chinese and English together
+
+- Students and alumni now show their Chinese and English names side by side
+  in both language modes, instead of one or the other depending on the
+  switch (borrowed from the CIT@NYCU members page). Members without a
+  confirmed English name show the Chinese name alone
+- Rule recorded: graduation years are never shown on the members page
+
 ## 2026-10-11 — advisor photo
 
 - Prof. Lin's portrait (from his profile page) replaces the "photo to come"
