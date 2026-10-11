@@ -93,7 +93,8 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
   language modes until then); research topics and personal links for all
 - Placements for the nine alumni who have not answered the survey yet (15 of
   24 are in); graduation years and thesis topics for all
-- Prof. Lin's photo
+- A higher-resolution photo of Prof. Lin — `assets/advisor.jpg` is the 160×200
+  portrait from his profile page, which looks soft on high-density screens
 - **Confirmation that `assets/logo.jpg` is the current logo**, and a vector
   original (AI/SVG/EPS) if one exists — the file here was extracted from a slide
   deck, so it is raster and carries a baked-in background

@@ -2,6 +2,11 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-10-11 — advisor photo
+
+- Prof. Lin's portrait (from his profile page) replaces the "photo to come"
+  placeholder on the Advisor page and in the home page's advisor section
+
 ## 2026-10-11 — three leftover attribution errors fixed
 
 - Research, analog layout: no longer calls Prof. Lin's nine U.S. patents "the
