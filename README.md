@@ -110,9 +110,12 @@ Patents and book chapters are **not** in DBLP and are maintained by hand in
   until the lab decides otherwise. Do not re-add photo boxes.
 - **Current students are ordered by seniority, but the year level is never
   shown** — not on the page and not in HTML comments (the repo is public).
-- **Alumni rows are equal.** Newest graduates first. Each row is: name → company
-  · role, plus the bare title of a lab paper where one exists — no venue names,
+- **Alumni rows are equal.** Newest graduates first. Each row is: name →
+  company, plus the bare title of a lab paper where one exists — no venue names,
   awards, or author-position claims, so no graduate overshadows another.
+- **Job roles are never published.** The alumni survey asks for role only so
+  juniors know whom to ask about jobs and referrals; alumni were told it stays
+  internal. The role column lives in the master roster, not on the page.
 - **Names:** English mode shows the English name where one is confirmed, the
   Chinese name otherwise. Never derive one from the other.
 - **Placements** come from the alumni survey (a Google Form posted in the lab's

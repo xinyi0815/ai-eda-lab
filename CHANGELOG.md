@@ -2,6 +2,12 @@
 
 Notable changes to the AI-EDA Lab website. Newest first.
 
+## 2026-10-11 — alumni job roles removed
+
+- Alumni rows now show the company only. Job roles had been published by
+  mistake; the lab had told alumni their role would stay internal (it is for
+  juniors asking about jobs and referrals). Rule recorded in the README
+
 ## 2026-10-11 — alumni placements and student English names
 
 - Alumni rows now show where each graduate went: company · role, for the 15
